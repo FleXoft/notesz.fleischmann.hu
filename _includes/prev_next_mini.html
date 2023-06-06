@@ -1,0 +1,10 @@
+<p style="text-align:left;">
+{% if page.previous.url %}
+<a title="< {{ page.previous.title }}" style="text-decoration: none;" href="{{ page.previous.url }}">←</a>
+{% endif %}
+{% if page.next.url %}
+ <a title="{{ page.next.title }} >" style="text-decoration: none;" href="{{ page.next.url }}">→</a>
+{% else %}
+<a title="Home >" style="text-decoration: none;" href="/">→</a>
+{% endif %}
+</p>

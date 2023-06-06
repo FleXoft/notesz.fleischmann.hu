@@ -1,0 +1,52 @@
+<!-- Based on: https://www.cssigniter.com/make-sticky-floating-videos-page-scroll/ article. -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+
+window.onload = function() {
+
+  var $window =      $( window );
+  var $videoWrap =   $( '.video-wrap' );
+  var $video =       $( '.video' );
+  var videoHeight =  $video.outerHeight();
+
+  var $end =         $( '.sticky_floating_video' );
+  var endOffsetTop = 99999;
+
+  if ( $end.offset() ) {
+    endOffsetTop = $end.offset().top;
+  }
+  // console.log( "DEBUG: sticky_floating_video [" + endOffsetTop + "]" );
+
+  window.addEventListener( 'scroll', function() {
+    var windowScrollTop = $window.scrollTop();
+    var videoBottom     = videoHeight + $videoWrap.offset().top;
+
+    if ( windowScrollTop > videoBottom && windowScrollTop < endOffsetTop ) {
+      
+      if ( ! $video.hasClass( 'stuck' ) ) {
+
+        $videoWrap.height( videoHeight );
+        $video.addClass( 'stuck' );
+
+        // arrange the lyrics
+        document.getElementById( 'lyrics' ).setAttribute( "style", "width: 55%" );
+
+      }
+
+    } else {
+      $videoWrap.height( 'auto' );
+      $video.removeClass( 'stuck' );
+
+      // arrange back
+      document.getElementById( 'lyrics' ).setAttribute( "style", "width: 100%" );
+    }
+  } );
+
+}
+
+// update
+// window.onload = function() { videoHeight = $video.outerHeight(); };
+
+</script>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<!-- 
+#
+#      __    __              ______     _           __                                  __         
+#     / /_  / /___  ____ _  / __/ /__  (_)_________/ /_  ____ ___  ____ _____  ____    / /_  __  __
+#    / __ \/ / __ \/ __ `/ / /_/ / _ \/ / ___/ ___/ __ \/ __ `__ \/ __ `/ __ \/ __ \  / __ \/ / / /
+#   / /_/ / / /_/ / /_/ / / __/ /  __/ (__  ) /__/ / / / / / / / / /_/ / / / / / / / / / / / /_/ / 
+#  /_.___/_/\____/\__, (_)_/ /_/\___/_/____/\___/_/ /_/_/ /_/ /_/\__,_/_/ /_/_/ /_(_)_/ /_/\__,_/  
+#                /____/                                                                            
+# -----------------------------------------------------------------------------------------------------------
+#
+#
+# Jekyll based web page POC v2 on GitHub
+# 
+# 
+# ToDo:
+#
+#
+# Rls:      2022.06.01. v1.0
+#
+#
+# preRls:   2022.05.24.
+#
+#   Nem szerték már többet módosítani (default.html, post.html) rajta
+#
+#
+# betaRls:  2022.05.01.
+#
+#   Ötlet és Github projekt, fájlok létrehozása.
+#
+#
+-->
+
+<html lang="hu-HU">
+<head>
+
+  <meta charset="utf-8" />
+  <meta name="xviewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="keywords" content="Fleischmann György, fleischmann, flex, gyurci, flexoft, mohács, budapest, magyarország, hungary, photography, digital, photo, black and white, landscape, people, blog, light, photo blog, photolog, photoblog, linux, sinclair, zx spectrum, psion, timex, perl, lcd, minolta, 9000, d7d, tsm, tivoli, ibm, tsm, tivoli storage manager, spectrum protect, gpfs, spectrum scale, osx, apple, ble" />
+
+  <meta name="owner"  content="FLEISCHMANN György" />
+  <meta name="author" content="FLEISCHMANN György" />
+
+  <meta name="description" content="A personal page for Fleischmann György."/>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link href="https://notesz.fleischmann.hu/opensearch.xml" rel="search" title="notesz.fleischmann.hu" type="application/opensearchdescription+xml" />
+  
+  <link href="feed.xml" type="application/rss+xml" rel="alternate" title="Latest 10 blog posts (atom)" />
+  
+  <!-- iOS Safari background color -->
+  <meta name="theme-color" content="#000000">
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8K57X3L40C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-8K57X3L40C');
+  </script>
+  
+  <link rel="stylesheet" type="text/css" href="css/default_v2.css">
+  <link rel="stylesheet" type="text/css" href="css/syntax.css" />
+  
+  <!-- UI JS file -->  
+  <link rel='stylesheet' href='unitegallery/css/unite-gallery.css' type='text/css' /> 
+  <link rel='stylesheet' href='unitegallery/themes/default/ug-theme-default.css' type='text/css' /> 
+    
+  <script type='text/javascript' src='unitegallery/js/jquery-11.0.min.js'></script>
+  <script type='text/javascript' src='unitegallery/js/unitegallery.min.js'></script> 
+  <script type='text/javascript' src='unitegallery/themes/tiles/ug-theme-tiles.js'></script>
+
+</head>
+
+<body class="">
+
+<!--
+<a href="https://fleischmann.hu/" title="fleischmann.hu"><center class="rightfloatingbox" style="padding: 5px; font-size: 60%; "><font color="#008f3f">F</font><br>
+<font color="#0057a6">L</font><br>
+<font color="#77147e">E</font><br>
+<font color="#f5a301">I</font><br>
+<font color="#e50005">S</font><br>
+<font color="#a8361e">C</font><br>
+<font color="#82cfed">H</font><br>
+<font color="#0191b4">M</font><br>
+<font color="#dd5e01">A</font><br>
+<font color="#777"   >N</font><br>
+<font color="#FFF"   >N</font><br>
+</center></a>
+-->
+
+<!-- Header -->
+<header style="background-repeat: no-repeat; background-size: cover; {{ page.headerBGposition }}
+  background-image:url({{ page.headerBGimage }}); ">
+
+  <!-- Menubar -->
+  <div id="menubar" style="width: 100%; white-space :nowrap; display: flex; opacity: 1;">
+    <div id="lmenubar" class="leftside" style="background: rgba( 0, 0, 0, 0.85 ); color: white; text-align: center; {{ page.menuLEFTStyleOverride }}">
+      <div class="menupadding">
+        
+{% if page.url == '/' %}notesz.<a class="menu" href="https://fleischmann.hu/" title="fleischmann.hu">fleischmann.hu</a>{% else %}<a class="menu" href="/" title="Home" >{{ site.title }}</a>{% endif %}
+              
+      </div>
+    </div>
+    <div id="rmenubar" class="rightside" style="background: rgba( 10, 10, 10, 0.70 ); color: white; text-align: left; {{ page.menuRIGHTStyleOverride }}">
+      <div class="menupadding">
+
+        <hr color="red" style="margin-top: 18px;" />
+
+<!-- Debug button -->
+<script type="text/javascript">
+  
+  var s = document.styleSheets[0];
+
+  function changeStylesheetRule( selector, property, value ) {
+    selector = selector.toLowerCase();
+    property = property.toLowerCase();
+    value = value.toLowerCase();
+
+    for( var i = 0; i < s.cssRules.length; i++ ) {
+      var rule = s.cssRules[i];
+      if( rule.selectorText === selector ) {
+        rule.style[property] = value;
+        return;
+      }
+    }
+    
+    s.insertRule( selector + " { " + property + ": " + value + "; }", 0 );
+  }
+
+</script>
+
+<!--
+<button id="debugON"  onclick="changeStylesheetRule( 'div', 'border', '1px solid red' )">On</button> / 
+<button id="debugOFF" onclick="changeStylesheetRule( 'div', 'border', '0px solid' )">Off</button>
+-->
+
+<!-- Arrow handler -->
+<script>
+  $( "body" ).keydown( function( e ) {
+    if( e.altKey == true ) {
+      return
+    }
+    
+    if( e.keyCode == 37 ) { 
+      // left
+      {% if page.url == '/' %}
+        window.location.href = "{{ site.posts.first.url }}";
+      {% else %}
+        window.location.href = "{% if page.previous.url %}{{ page.previous.url }}{% else %}/{% endif %}";
+      {% endif %}
+    }
+    else if( e.keyCode == 39 ) { 
+      // right
+      {% if page.url == '/' %}
+        window.location.href = "{{ site.posts.last.url }}";
+      {% else %}
+        window.location.href = "{% if page.next.url %}{{ page.next.url }}{% else %}/{% endif %}";
+      {% endif %}
+    }
+    else if( e.keyCode == 72 ) { 
+      // h
+      window.location.href = "/";
+    }
+  } )
+</script>
+
+      </div>
+    </div> 
+  </div>
+  
+  <!-- Main header -->
+  <div style="width: 100%; display: flex; height: {{ page.headerSIZE }};">
+
+{% if page.disableheaderLEFT != true %}
+    <div class="leftside" style="background: rgba( 0, 0, 0, 0.55 ); color: white; text-align: right; {{ page.headerMainLEFTStyleOverride }}">
+      <div class="menupadding" style="{{ page.headerLEFTStyleOverride }}">
+
+{{ page.headerLEFT }}
+
+      </div>  
+    </div>
+{% endif %}
+
+    <div class="rightside" style="position: relative; {{ page.headerMainRIGHTStyleOverride }}">
+      <div class="menupadding" style="{{ page.headerRIGHTStyleOverride }}">
+
+{{ page.headerRIGHT }}
+
+</div>
+
+      <!-- Bottom part -->
+      <div style="position: absolute; width: 100%; bottom: 0px; right: 0px; opacity: 0.75; {{ page.headerRIGHTbottomStyleOverride }}">
+
+{{ page.headerRIGHTbottom }}
+
+      </div>
+      <!-- End of bottom part  -->
+
+    </div>
+  </div>
+  <!-- End of Main Hheader -->
+
+</header>
+
+<!-- Content -->
+<div class="contentcontainer" style="width: 100%; {{ page.contentcontainerStyleOverride }}">
+
+{% if page.disablecontentLEFT != true %}  
+    <div class="contentleftside" style="; background: rgba( 0, 0, 0, .5 ); {{ page.contentLEFTStyleOverride }}">
+      <div class="contentpaddingleft" style="{{ page.contentLEFTDateStyleOverride }};">
+      
+{% assign YEAR = page.date | date: "%Y" %}
+{% if YEAR != '0000' %}<div align="" class="post-date">{% assign m = page.date | date: "%-m" %}{{ page.date | date: "%Y., " }}{% case m %}{% when '1' %}január{% when '2' %}február{% when '3' %}március{% when '4' %}április{% when '5' %}május{% when '6' %}június{% when '7' %}július{% when '8' %}augusztus{% when '9' %}szeptember{% when '10' %}október{% when '11' %}november{% when '12' %}december{% endcase %}{{ page.date | date: " %-d." }}</div>{% endif %}
+
+      </div>    
+      <div class="contentpaddingleft" style="{{ page.contentpaddingLEFTStyleOverride }}">
+{{ page.contentLEFT }}
+      </div>
+      
+      <div class="contentpaddingleft" style="position: -webkit-sticky; position: sticky; top: 0px; {{ page.contentpaddingLEFTstickypartStyleOverride }}">
+{{ page.contentLEFTstickypart }}
+      </div>
+        
+    </div>
+{% endif %}
+   
+    <div class="contentrightside" style="background: rgba( 255, 255, 255, 1 ); {{ page.contentRIGHTStyleOverride }}">
+      
+{{ page.beforeContent }}
+      
+      <div class="contentpaddingright" style="{{ page.contentpaddingRIGHTStyleOverride }}">
+
+<a name="topofthepage"></a>
+
+{{ content }}
+
+      </div>
+
+{{ page.afterContent }}
+      
+    </div>
+</div>
+
+{{ page.beforeFooter }}
+
+<!-- Footer -->
+<footer style="width: 100%;">
+  <div style=" padding: 15px; background: rgba( 240,  240, 240, 1 ); color: white; text-align: center;">
+    <span style="color: red">☆</span> <a href="#top" title="Back to Top">© 2023... Fleischmann György. No rights reserved.</a> <span style="color: red">☆</span>
+  </div>
+</footer>
+
+{{ page.afterFooter }}
+
+<a name="bottomofthepage"></a>
+
+</body>
+</html>

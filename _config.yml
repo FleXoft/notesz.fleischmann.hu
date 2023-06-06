@@ -1,0 +1,39 @@
+###########
+# site.title, site.url, site.author.name
+
+title:   'notesz.fleischmann.hu'
+
+## note: 
+#  use site.path in your templates to make it work for both protocols e.g. http and https
+#  use site.url only inside the web feed template (e.g. requires full url incl. protocol)
+path: ''
+url:  'https://notesz.fleischmann.hu/'
+
+########
+# more settings
+
+markdown:    kramdown
+highlighter: rouge
+
+extensions:  [footnotes]
+
+sass:
+  sass_dir:  css
+  style:     expanded
+
+permalink:   /:title
+
+exclude:
+- README.md
+
+safe:   true
+lsi:    false
+future: false
+
+# feed
+name:                 'notesz.fleischmann.hu'
+description:          'notesz.fleischmann.hu POC feed description'
+
+feed_items:            10
+feed_update_period:    daily
+feed_update_frequency: 1

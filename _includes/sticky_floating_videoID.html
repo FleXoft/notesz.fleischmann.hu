@@ -1,0 +1,46 @@
+<!-- Based on: https://www.cssigniter.com/make-sticky-floating-videos-page-scroll/ article. -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+
+  var $window                       = $( window );
+  var $videoWrap_{{ include.ID }}   = $( document.getElementById( 'video-wrap_{{ include.ID }}' ) );
+  var $video_{{ include.ID }}       = $( document.getElementById( 'video_{{ include.ID }}' ) );
+  var videoHeight                   = $video_{{ include.ID }}.outerHeight();
+
+  var $end_{{ include.ID }}         = $( document.getElementById( 'sticky_floating_video_end_{{ include.ID }}' ) );
+  var endOffsetTop_{{ include.ID }} = 99999;
+
+  if ( $end_{{ include.ID }}.offset() ) {
+    endOffsetTop_{{ include.ID }} = $end_{{ include.ID }}.offset().top;
+  }
+  // console.log( "DEBUG: sticky_floating_video_{{ include.ID }} [" + endOffsetTop_{{ include.ID }} + "]" );
+
+  window.addEventListener( 'scroll', function( _{{ include.ID }}_ ) {
+
+    var windowScrollTop = $window.scrollTop();
+    var videoBottom     = videoHeight + $videoWrap_{{ include.ID }}.offset().top;
+
+    if ( windowScrollTop > videoBottom && windowScrollTop < endOffsetTop_{{ include.ID }} ) {
+
+      if ( ! $video_{{ include.ID }}.hasClass( 'stuck' ) ) {
+
+        $videoWrap_{{ include.ID }}.height( videoHeight );
+        $video_{{ include.ID }}.addClass( 'stuck' );
+
+        // arrange the lyrics
+        document.getElementById( 'lyrics_{{ include.ID }}' ).setAttribute( "style", "width: 55%" );
+        
+      }
+
+    } else {
+      $videoWrap_{{ include.ID }}.height( 'auto' );
+      $video_{{ include.ID }}.removeClass( 'stuck' );
+
+      // arrange the lyrics back
+      document.getElementById( 'lyrics_{{ include.ID }}' ).setAttribute( "style", "width: 100%" );
+    }
+  } );
+
+</script>
