@@ -1,5 +1,5 @@
 ---
-layout:   post_v2
+layout:   post_v3
 title:    "How Do You Measure a Year? / Following Sean"
 author:   flex
 category: 2022...

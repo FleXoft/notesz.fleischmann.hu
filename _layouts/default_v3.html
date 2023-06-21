@@ -11,7 +11,7 @@
 # -----------------------------------------------------------------------------------------------------------
 #
 #
-# Jekyll based web page POC v2 on GitHub
+# Jekyll based web page POC v3 on GitHub
 # 
 # 
 # ToDo:
@@ -67,7 +67,7 @@
     gtag('config', 'G-8K57X3L40C');
   </script>
   
-  <link rel="stylesheet" type="text/css" href="css/default_v2.css">
+  <link rel="stylesheet" type="text/css" href="css/default_v3.css">
   <link rel="stylesheet" type="text/css" href="css/syntax.css" />
   
   <!-- UI JS file -->  
@@ -98,11 +98,13 @@
 -->
 
 <!-- Header -->
-<header style="background-repeat: no-repeat; background-size: cover; {{ page.headerBGposition }}
-  background-image:url({{ page.headerBGimage }});">
+<div style="background-repeat: no-repeat; background-size: cover; {{ page.headerBGposition }}
+background-image:url({{ page.headerBGimage }});">
+<header style="">
 
   <!-- Menubar -->
-  <div id="menubar" style="width: 100%; white-space :nowrap; display: flex; opacity: 1;">
+  <div style="background-color: black; opacity: 0.85; margin-left: calc( 50% - 50vw ); margin-right: calc( 50% - 50vw );">
+  <div id="menubar" class="maxw" style="width: 100%; white-space :nowrap; display: flex; opacity: 1; margin: auto;">
     <div id="lmenubar" class="leftside" style="background: rgba( 0, 0, 0, 0.85 ); color: white; text-align: center; {{ page.menuLEFTStyleOverride }}">
       <div class="menupadding">
         
@@ -180,6 +182,7 @@
       </div>
     </div> 
   </div>
+  </div>
   
   <!-- Main header -->
   <div style="width: 100%; display: flex; height: {{ page.headerSIZE }};">
@@ -214,8 +217,10 @@
   <!-- End of Main Hheader -->
 
 </header>
+</div>
 
 <!-- Content -->
+<div class="maxw" style="margin: auto;"> 
 <div class="contentcontainer" style="width: 100%; {{ page.contentcontainerStyleOverride }}">
 
 {% if page.disablecontentLEFT != true %}  
@@ -252,6 +257,7 @@
 {{ page.afterContent }}
       
     </div>
+</div>
 </div>
 
 {{ page.beforeFooter }}

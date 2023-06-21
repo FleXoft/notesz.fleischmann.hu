@@ -1,5 +1,5 @@
 ---
-layout:   default_v2
+layout:   default_v3
 title:    Tartalomjegyzék / table of contents
 author:   flex
 category: index
