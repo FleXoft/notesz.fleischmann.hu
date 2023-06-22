@@ -33,9 +33,9 @@ contentpaddingRIGHTStyleOverride: ''
 
 <link rel="stylesheet" type="text/css" href="css/override_v2_courier.css">
 
-{% include hudate.html %}
-
 <hr>
+
+{% include hudate.html %}
 
 ## How Do You Measure A Year?
 
