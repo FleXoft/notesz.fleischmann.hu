@@ -25,6 +25,8 @@ disableContentTitle: ''
 xdisablecontentLEFT: true
 xcontentRIGHTStyleOverride:       'width: 100%;'
 contentpaddingRIGHTStyleOverride: 'padding-bottom: 0px;'
+
+contentoutsidecontainerStyleOverride: 'background-image: linear-gradient( 180deg, rgba( 55, 70, 85, 1 ), rgba(240, 240, 240, 1)); background-repeat: repeat-x;'
 ---
 
 {% assign rawtags = "" %}
