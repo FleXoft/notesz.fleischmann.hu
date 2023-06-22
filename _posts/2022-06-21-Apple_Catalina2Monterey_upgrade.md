@@ -1,5 +1,5 @@
 ---
-layout:   post_v2
+layout:   post_v3
 title:    Upgrade from Apple macOS Catalina to Monterey
 author:   flex
 category: 2020...2022 (FNXS)
@@ -15,10 +15,13 @@ headerMainRIGHTStyleOverride: 'width: 100%;'
 headerRIGHT:	   ''
 disableheaderLEFT: true
 
-contentLEFTStyleOverride: 'background: rgba( 40, 27, 123, 0.8 ); color: white;'
+contentLEFTStyleOverride: 'background: rgba( 40, 27, 123, 1 ); color: white;'
 contentpaddingLEFTStyleOverride: 'padding: 0px;'
 contentLEFT: '<p style="padding: 20px;"><img src="images/Apple_MBP16Touch-Silver-2019_nobg.png"></p>'
 contentLEFTstickypart: 'Tartalom:<hr style="margin-top: 0px;"><div align="justify" style="padding-left: 20px;"><a href="#topofthepage">☝️</a><br><a href="#where-we-started-from">👉<nbsp>Where we started from<br><a href="#checklist-after-the-upgrade-process">👉<nbsp>Checklist after the upgrade process</a><br><a href="#bottomofthepage">👇</a></div>'
+contentpaddingLEFTstickypartStyleOverride: 'padding-top: 5px;'
+
+contentoutsidecontainerStyleOverride: 'background: rgba( 40, 27, 123, 1 );'
 ---
 
 Knowing that I'm going to lose my current daily job, the next thing I planed to do on our home computer infrastructure. So the next thing after the [DSM 7 upgrade](Synology_DSM7_upgrade) on our Synology NAS was to upgrade the macOS operating system on my MacBook Pro from Catalina to the latest version of Monterey as soon as I could. This also happened a little bit earlier than I originally planned, but I couldn't wait any longer...
