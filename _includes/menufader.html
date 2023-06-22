@@ -1,0 +1,68 @@
+<script>
+		
+	var timer;	
+		
+	function reduceOpacity() {
+		document.getElementById( "lmenubar" ).style.transition = "background-color 1.5s ease-in";
+		// document.getElementById( "menubar" ).style.opacity = "0.05";
+		document.getElementById( "lmenubar" ).style.backgroundColor = "{{ include.TO }}"
+		document.getElementById( "rmenubar" ).style.transition = "background-color 1.5s ease-in";
+		// document.getElementById( "menubar" ).style.opacity = "0.05";
+		document.getElementById( "rmenubar" ).style.backgroundColor = "{{ include.TO }}"
+		
+		document.getElementById( "menu" ).style.transition = "background-color 1.5s ease-in";
+		document.getElementById( "menu" ).style.backgroundColor = "{{ include.TO }}"
+	}
+	
+	function runTime() {
+		clearInterval( timer );
+		timer = setInterval( reduceOpacity, 6000 );
+	}
+	runTime();
+
+	var prevScrollpos = window.pageYOffset;
+
+	window.onscroll = function() {
+		var currentScrollPos = window.pageYOffset;
+		if ( prevScrollpos > currentScrollPos ) {
+			// clearInterval( timer );
+			runTime();
+			document.getElementById( "lmenubar" ).style.transition = "background-color 1s ease-in";
+			// document.getElementById( "rmenubar" ).style.opacity = "1";
+			document.getElementById( "lmenubar" ).style.backgroundColor = "{{ include.FROM }}"
+			document.getElementById( "rmenubar" ).style.transition = "background-color 1s ease-in";
+			// document.getElementById( "rmenubar" ).style.opacity = "1";
+			document.getElementById( "rmenubar" ).style.backgroundColor = "{{ include.FROM }}"
+			
+			document.getElementById( "menu" ).style.transition = "background-color 1s ease-in";
+			document.getElementById( "menu" ).style.backgroundColor = "{{ include.FROM }}"
+			
+		} else {
+			document.getElementById( "lmenubar" ).style.transition = "background-color 1s ease-in";
+			// document.getElementById( "rmenubar" ).style.opacity = "1";
+			document.getElementById( "lmenubar" ).style.backgroundColor = "{{ include.TO }}"
+			document.getElementById( "rmenubar" ).style.transition = "background-color 1s ease-in";
+			// document.getElementById( "rmenubar" ).style.opacity = "0";
+			document.getElementById( "rmenubar" ).style.backgroundColor = "{{ include.TO }}"
+
+			document.getElementById( "menu" ).style.transition = "background-color 1s ease-in";
+			document.getElementById( "menu" ).style.backgroundColor = "{{ include.TO }}"
+		}
+		prevScrollpos = currentScrollPos;
+	}
+	
+	document.getElementById( "menubar" ).onmouseover = function() {
+		runTime();
+		document.getElementById( "lmenubar" ).style.transition = "background-color 0s";
+		// document.getElementById( "rmenubar" ).style.opacity = "1";
+		document.getElementById( "lmenubar" ).style.backgroundColor = "{{ include.FROM }}"
+
+		document.getElementById( "rmenubar" ).style.transition = "background-color 0s";
+		// document.getElementById( "rmenubar" ).style.opacity = "1";
+		document.getElementById( "rmenubar" ).style.backgroundColor = "{{ include.FROM }}"
+
+		document.getElementById( "menu" ).style.transition = "background-color 0s";
+		document.getElementById( "menu" ).style.backgroundColor = "{{ include.FROM }}"
+	}
+	
+</script>
