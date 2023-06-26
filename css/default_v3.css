@@ -233,8 +233,9 @@ display: flex;
 }
 
 .contentleftside {
-/* min-width: 320px; */
+min-width: 320px ;
 width: 20%;
+display: inline-block;
 text-align: right;  
 }
 
