@@ -76,6 +76,7 @@ Anna használta ezt a korábbi céges gépemet. macOS Mojave 10.14.6-ig mentünk
 Én nagyon szerettem ezt a gépet és ennek még rendben voltak a portjai:
 
 ![Apple MacBook Pro](images/Apple/Apple_MacBook_Pro_13_ports.png){: style="margin-top: 2rem;" }
+{% include minirdesc.html DESC='<a href="https://support.apple.com/kb/sp703?locale=en_US">Source</a>' %}
 
 Talán egy ethernet port hiányzott néha róla, amikor nem volt nálam a dongle hozzá, de ez azért nem is emlékszem hányszor történt velem meg.
 
@@ -85,22 +86,21 @@ Nem vagyok felhőtlenül elégedett ezzel a géppel. Maga az eredeti elképzelé
 
 **Nagyon zavaró:**
 
-![Apple MacBook Pro](images/Apple_MBP16Touch-Silver-2019_nobg.png){: .rightbox .rightboxalignment }
-
 - a jobb oldali fejhallgató csatlakozó
+![Apple MacBook Pro](images/Apple_MBP16Touch-Silver-2019_nobg.png){: .rightbox .rightboxalignment }
 - hogy amikor frissítettem macOS Monterey-re, akkor nagyon sok apróság nem működött rendesen (AirPlay)
 - mostanra megint használható, de azért NA!
 - egy ilyen gép hogyan tud laggolni, röcögni néha???
 - nincs HDMI és SD kártyaolvasó
 - csak két belső busza van az USB-C-s portokhoz, NA!
-- kicsit nehéz
-- Magsafe, NA!
+- (kicsit nehéz)
+- MagSafe, NA!
 - kell hozzá vinni egy dongle-t a portokhoz
 
 **Tetszik benne:**
 
 - nagy
-- szép a hangja és a képe
+- szép a hangja és a képe, de a képernyő keretét nem értem, hogy miért nem szimmetrikus alul/felül/oldalt
 - ha rendesen megy, akkor azért el lehet vele lenni, de NA!
 
 Ennek a cseréje pedig lehet, hogy költségoptimalizálás miatt el is fog maradni és majd visszaköltözöm a családi gépre egy időre és meghagyom ennek a gépnek a cseréjét egy esetleges következő munkahelynek, de elméleti síkon lehetne egy:
@@ -109,4 +109,6 @@ Ennek a cseréje pedig lehet, hogy költségoptimalizálás miatt el is fog mara
 - használt MacBook Pro 16" M1 Pro 10 magos CPU, 16 magos GPU 16GB, 512GB SSD (**869 000,- Ft.**)
 -          MacBook Air 15" M2      8 magos CPU, 10 magos GPU  8GB, 512GB SSD ??? fejhallgato jack!!!
 
-/* Azért ezek már elég kemény árak főleg, hogy használt eszközökről beszélünk!!! */
+/* Azért ezek már elég kemény árak főleg, hogy használt eszközökről is beszélünk!!! */
+
+# Meglátjuk!
