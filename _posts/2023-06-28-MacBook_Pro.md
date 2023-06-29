@@ -38,9 +38,9 @@ contentpaddingRIGHTStyleOverride: ''
 
 <hr>
 
-Elkezdtem (nem elkezdtem, hanem folyamatosan) gondolkodni azon, hogy a jövőben milyen gépre is váltanék, ha majd eljön ennek a váltásnak az ideje. 
+Elkezdtem (na nem elkezdtem, hanem folyamatosan megy persze a matek ezen a témán, mert ugye nem kevés pénzről van szó) gondolkodni azon, hogy a jövőben milyen gépre is váltanék, ha majd eljön ennek a váltásnak az ideje. 
 
-Még mindig úgy érzem, hogy nem szeretnék / nem tudok már platformot váltani, tehát marad az Apple ökoszisztéma az ökoszisztémát már pár éve jellemző húzós áraival.
+Még mindig úgy érzem, hogy nem szeretnék / nem tudok már platformot váltani, tehát marad az Apple ökoszisztéma, ezzel az ökoszisztémát már pár éve jellemző húzós áraival.
 
 Három gépet is érint majd ez a projekt itthon a családban:
 
@@ -48,18 +48,17 @@ Három gépet is érint majd ez a projekt itthon a családban:
 - Anna 2014-es 13"-as Retina MacBook Pro-ja
 - és az én (volt) 2019-es céges MacBook Pro 16"
 
-
 ## iMac 21,5" (iMac12,1)
 
-Már több sebből is vérzik szegényke, de rendesen kiszolgált minket, sőt még most is rendben teszi a dolgát több, mint 10 éve:
+Már több sebből vérzik szegényke, de rendesen kiszolgált minket, sőt még most is azt lehet mondani, hogy rendben teszi a dolgát már több, mint 10 éve:
 
 ![Apple iMac](images/Apple/Apple_iMac_21.5.png){: .rightbox .rightboxalignment }
 	
-- korábban be lett szerelve egy 256 GB-os SSD, ami már tönkre is ment benne és egy újra lett kicserélve
-- néha nem lehet bekapcsolni, ami elég idegesítő tud azért lenni
+- korábban be lett szerelve egy 256 GB-os SSD, ami már időközben tönkre is ment benne és egy újra lett kicserélve
+- néha nem lehet bekapcsolni alvó állapotából, ami elég idegesítő tud azért lenni
 - az operációs rendszere maximum macOS High Sierra 10.13.6-ra frissíthető 
 
-**A megoldása egy:**
+**Ennek a megoldása egy:**
 
 - Mac mini M2 (**299 900,- Ft.**) vagy a nagyobb testvére (**399 900,- Ft.**) lehet egy 4K-s új monitorral.
 
@@ -82,17 +81,18 @@ Talán egy ethernet port hiányzott néha róla, amikor nem volt nálam a dongle
 
 ## 16" MacBook Pro (MacBookPro16,1)
 
-Nem vagyok felhőtlenül elégedett ezzel a géppel. Maga az eredeti elképzelés az volt, hogy a folyamatosan romló szememhez majd biztosan sokkal jobb lesz a nagyobb kijelző és a munkavégzéshez is jobb lesz és nem kell feltétlenül külső monitort használni.
+Nem vagyok felhőtlenül elégedett ezzel a géppel. Maga az eredeti elképzelés az volt, hogy a folyamatosan romló szememhez majd biztosan sokkal jobb lesz a nagyobb kijelző és a munkavégzéshez is talán jobb lesz és nem kell feltétlenül külső monitort használni hozzá.
 
 **Nagyon zavaró:**
 
-- a jobb oldali fejhallgató csatlakozó
 ![Apple MacBook Pro](images/Apple_MBP16Touch-Silver-2019_nobg.png){: .rightbox .rightboxalignment }
-- hogy amikor frissítettem macOS Monterey-re, akkor nagyon sok apróság nem működött rendesen (AirPlay)
-- mostanra megint használható, de azért NA!
+
+- a jobb oldali fejhallgató csatlakozó
+- hogy amikor frissítettem macOS Monterey-re, akkor nagyon sok apróság nem működött rendesen (AirPlay) 
+- mostanra megint használható az egész gép (macOS Monetery 12.6.7 (21G651), itt sem mertem már bevállalni új OS-t), de azért NA!
 - egy ilyen gép hogyan tud laggolni, röcögni néha???
-- nincs HDMI és SD kártyaolvasó
-- csak két belső busza van az USB-C-s portokhoz, NA!
+- nincs HDMI és SD kártyaolvasója
+- csak két belső busza van az USB-C-s portokhoz, Pro NA!
 - (kicsit nehéz)
 - MagSafe, NA!
 - kell hozzá vinni egy dongle-t a portokhoz
@@ -101,7 +101,7 @@ Nem vagyok felhőtlenül elégedett ezzel a géppel. Maga az eredeti elképzelé
 
 - nagy
 - szép a hangja és a képe, de a képernyő keretét nem értem, hogy miért nem szimmetrikus alul/felül/oldalt
-- ha rendesen megy, akkor azért el lehet vele lenni, de NA!
+- ha rendesen megy, akkor azért el lehet vele lenni, de sok NA!
 
 Ennek a cseréje pedig lehet, hogy költségoptimalizálás miatt el is fog maradni és majd visszaköltözöm a családi gépre egy időre és meghagyom ennek a gépnek a cseréjét egy esetleges következő munkahelynek, de elméleti síkon lehetne egy:
 
@@ -110,5 +110,7 @@ Ennek a cseréje pedig lehet, hogy költségoptimalizálás miatt el is fog mara
 -          MacBook Air 15" M2      8 magos CPU, 10 magos GPU  8GB, 512GB SSD ??? fejhallgato jack!!!
 
 /* Azért ezek már elég kemény árak főleg, hogy használt eszközökről is beszélünk!!! */
+
+<br>
 
 # Meglátjuk!
