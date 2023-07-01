@@ -34,6 +34,8 @@ contentpaddingRIGHTStyleOverride: ''
 
 <link rel="stylesheet" type="text/css" href="css/override_v2_courier.css">
 
+{% include menufader.html FROM='black' TO='white' %}
+
 {% include hudate.html %}
 
 <hr>
@@ -89,7 +91,7 @@ Nem vagyok felhőtlenül elégedett ezzel a géppel. Maga az eredeti elképzelé
 
 - a jobb oldali fejhallgató csatlakozó
 - hogy amikor frissítettem macOS Monterey-re, akkor nagyon sok apróság nem működött rendesen (AirPlay) 
-- mostanra megint használható az egész gép (macOS Monetery 12.6.7 (21G651), itt sem mertem már bevállalni új OS-t), de azért NA!
+- mostanra megint használható az egész gép (macOS Monterey 12.6.7 (21G651), itt sem mertem már bevállalni új OS-t), de azért NA!
 - egy ilyen gép hogyan tud laggolni, röcögni néha???
 - nincs HDMI és SD kártyaolvasója
 - csak két belső busza van az USB-C-s portokhoz, Pro NA!
