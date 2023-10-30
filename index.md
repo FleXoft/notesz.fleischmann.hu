@@ -52,6 +52,11 @@ contentoutsidecontainerStyleOverride: 'background-image: linear-gradient( 180deg
 {% endif %}
 {% endfor %}
 
+Kedves Elvtársnők! Elvtársak!<br>
+Tisztelt idelátogató!
+
+<br>
+
 <hr style="border-top: 5px solid red;">
 {% if page.disableContentTitle != true %}<center><h1>{{ page.title }}</h1><center>{% endif %}
 <hr style="border-top: 5px solid red;">
