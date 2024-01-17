@@ -1,0 +1,31 @@
+p, h1, h2, h3, ul, table, .footnotes {
+	font-family: berkeley mono, monospace;
+}
+
+p, ul, table {
+	font-size: 1.2rem;
+	line-height: 1.6;
+}
+
+ul a {
+	font-weight: bold;
+}
+
+h1 {
+	#background-color: black;
+	#color: white;
+	#display: inline-block;
+	#padding-left: 1rem;
+	#adding-right: 1rem;
+
+	margin-top: 0rem;
+
+}
+
+h2 {
+	margin-top: 2rem;	  
+}
+
+.footnotes {
+	font-size: .7em;
+}
