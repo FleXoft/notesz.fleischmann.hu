@@ -1,10 +1,10 @@
 <p style="text-align:left;">
 {% if page.previous.url %}
-<a title="< {{ page.previous.title }}" style="text-decoration: none;" href="{{ page.previous.url }}">←</a>
+<a title="< {{ page.previous.title }}" style="text-decoration: none;" href="{{ page.previous.url }}"><span style="color: {{ include.COLOR | default: black }}">←</span></a>
 {% endif %}
 {% if page.next.url %}
- <a title="{{ page.next.title }} >" style="text-decoration: none;" href="{{ page.next.url }}">→</a>
+ <a title="{{ page.next.title }} >" style="text-decoration: none;" href="{{ page.next.url }}"><span style="color: {{ include.COLOR | default: black }}">→</span></a>
 {% else %}
-<a title="Home >" style="text-decoration: none;" href="/">→</a>
+<a title="Home >" style="text-decoration: none;" href="/"><span style="color: {{ include.COLOR | default: black }}">→</span></a>
 {% endif %}
 </p>
