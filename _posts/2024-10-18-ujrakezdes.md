@@ -2,7 +2,7 @@
 layout:   post_v3
 title:    "Újrakezdés/elkezdés"
 author:   flex
-category: 2022...
+category: 2024
 tags:     [flex]
 comments: false
 

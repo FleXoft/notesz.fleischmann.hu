@@ -1,14 +1,24 @@
-p, h1, h2, h3, ul, table, .footnotes {
+p, h1, h2, h3, ul, ol, table, .footnotes {
 	font-family: berkeley mono, monospace;
 }
 
 p, ul, table {
 	font-size: 1.2rem;
-	line-height: 1.6;
+	line-height: 1.8;
 }
 
 ul a {
 	font-weight: bold;
+}
+
+ul {
+	margin-bottom: 0px;
+}
+
+ol {
+	font-size: .8em;
+	margin-left: 1em;
+	line-height: 1.45;
 }
 
 h1 {

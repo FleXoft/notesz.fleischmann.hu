@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Kép összehasonlító</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#222;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    position:relative;
+    width:800px;
+    max-width:90%;
+    user-select:none;
+}
+
+.container img{
+    width:100%;
+    display:block;
+}
+
+.img-after{
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:50%;
+    overflow:hidden;
+}
+
+.img-after img{
+    width:800px; /* ugyanakkora mint a container */
+    max-width:none;
+}
+
+img{
+    pointer-events:none;
+    user-select:none;
+    -webkit-user-drag:none;
+}
+
+.slider{
+    position:absolute;
+    top:0;
+    left:50%;
+    width:4px;
+    height:100%;
+    background:white;
+    cursor:ew-resize;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="compare">
+
+    <img src="Hajni2026.png">
+
+    <div class="img-after" id="after">
+        <img src="Laci2026.png">
+    </div>
+
+    <div class="slider" id="slider"></div>
+
+</div>
+
+<script>
+
+const slider = document.getElementById("slider");
+const after = document.getElementById("after");
+const container = document.getElementById("compare");
+
+let isDown = false;
+
+slider.addEventListener("mousedown", () => isDown = true);
+window.addEventListener("mouseup", () => isDown = false);
+
+window.addEventListener("mousemove", (e) => {
+
+    if(!isDown) return;
+
+    const rect = container.getBoundingClientRect();
+    let x = e.clientX - rect.left;
+
+    if(x < 0) x = 0;
+    if(x > rect.width) x = rect.width;
+
+    slider.style.left = x + "px";
+    after.style.width = x + "px";
+
+});
+
+</script>
+
+</body>
+</html>

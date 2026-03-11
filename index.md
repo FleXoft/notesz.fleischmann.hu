@@ -1,32 +1,12 @@
 ---
-layout:   default_v3
+layout:   default_2026
 title:    Tartalomjegyzék / table of contents
 author:   flex
 category: index
 tags:     [muzax, video]
 comments: false
 
-headerSIZE:       380px
-headerBGimage:    'images/1563176849891-Vice-LICK-Photo-Bex-Wade-5.jpeg'
-headerBGposition: 'background-position: center;'
-headerLEFT:       '<h1>Start</h1>Valahol el kell kezdeni és ez most itt lesz a tartalomjegyzéknél...'
-contentLEFTStyleOverride:           'background-image: linear-gradient( 180deg, rgba( 38, 38, 38, 1 ), rgba(240, 240, 240, 1)); background-repeat: repeat-x;'
-headerRIGHT:      '<h1 style="">⬅</h1>'
-headerRIGHTbottom: '<div style="text-align: right"><div class="" style="display: inline-block; font-size: 50%; margin-bottom: 0px; background: black; color: white; padding: 7px;">Source: <a class="menu" href="https://www.vice.com/en/article/neapm7/lick-events-launch-opening-queer-women-club">"Inside the Queer Club with a Strict &lsquo;No Men&rsquo; Policy"</a></div></div>'
-
-contentLEFT: '<center style=" padding-top: 58px;"><a href="https://twitter.com/FleXoft"><img style="width: 80%; margin-bottom: 3%;" src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/Twitter_2010_logo_-_from_Commons.svg/1024px-Twitter_2010_logo_-_from_Commons.svg.png"></a></center><center style="padding: 20px;"><a class="twitter-timeline" href="https://twitter.com/FleXoft?ref_src=twsrc%5Etfw" data-tweet-limit="5" data-dnt="true" data-chrome="noheader nofooter noscrollbar noborders transparent" data-lang="en"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>'
-contentLEFTDateStyleOverride:    'padding: 0px;'
-contentpaddingLEFTStyleOverride: 'padding: 0px;'
-xcontentLEFTStyleOverride:       'background: rgba( 211, 211, 211, 1 ); color: white;'
-contentLEFTStyleOverride:        'background: rgba( 110, 145, 185, 0.75 );'
-contentLEFTStyleOverride:        'background-image: linear-gradient( 180deg, rgba( 55, 70, 85, 1 ), rgba(240, 240, 240, 1)); background-repeat: repeat-x;'
-
-disableContentTitle: ''
-xdisablecontentLEFT: true
-xcontentRIGHTStyleOverride:       'width: 100%;'
-contentpaddingRIGHTStyleOverride: 'padding-bottom: 0px;'
-
-contentoutsidecontainerStyleOverride: 'background-image: linear-gradient( 180deg, rgba( 55, 70, 85, 1 ), rgba(240, 240, 240, 1)); background-repeat: repeat-x;'
+beforeMain: '<div class="image-container"><img width="100%" style="height: 470px; margin-bottom: -45px;" src="images/1563176849891-Vice-LICK-Photo-Bex-Wade-5.jpeg"><div class="image-caption">Source: <a href="https://www.vice.com/en/article/neapm7/lick-events-launch-opening-queer-women-club" target="_blank">"Inside the Queer Club with a Strict ‘No Men’ Policy"</a></div></div>'
 ---
 
 {% assign rawtags = "" %}
@@ -52,18 +32,27 @@ contentoutsidecontainerStyleOverride: 'background-image: linear-gradient( 180deg
 {% endif %}
 {% endfor %}
 
-Kedves Elvtársnők! Elvtársak!<br>
-Tisztelt idelátogató!
+<br>
+
+<hr color="red" style="height:3px;">
+{% if page.disableContentTitle != true %}<center><h1>{{ page.title }}</h1></center>{% endif %}
+<hr color="red" style="height:3px;">
 
 <br>
 
-<hr style="border-top: 5px solid red;">
-{% if page.disableContentTitle != true %}<center><h1>{{ page.title }}</h1><center>{% endif %}
-<hr style="border-top: 5px solid red;">
+<center><strong>Kedves Elvtársnők, Elvtársak, Tisztelt Idelátogató!</strong></center>
 
-Nem biztos, hogy teljesen jó ötlet ez a <a href="tags">#hashtag</a>-elés, de egyelőre ez most még marad itt:
+<br>
 
-<div style="width: 65%; margin: auto; padding: 30px; text-align: center;">
+Ez az oldal szerintem nem neked van és ha nem vagy teljesen biztos abban, hogy tényleg ide akartál látogatni, akkor kérlek ezen a ponton zárd be ezt az ablakot! Köszönöm szépen!
+
+„Abban, hogy tudok írni, nagyjából biztos voltam. Lehet, hogy nagyképűen hangzik, de az ember ne álljon oda tizenegyest lőni, ha azon szorong, hogy nem képes futni, rúgni és célozni”[^1] Teljesen igaz, de ezt most itt egy kicsit felrúgjuk, mert betűk nélkül bár sokkal könnyebb lenne, de nem fog tudni működni ez a notesz.
+
+[^1]: [A könyvemet Orbán Viktornak ajánlanám, hogy lássa azt is, ami nem a bankszámlája meg a Putyin segge](https://telex.hu/karakter/kultura/2025/12/16/pottyondy-edina-interju-kozossegi-iranyelvek-megsertese)
+
+Nem biztos, hogy teljesen jó ötlet ez a <a href="tags">#hashtag</a>-elés még mindig, de egyelőre ez most még marad itt:
+
+<div style="width: 75%; margin: auto; padding: 0px; text-align: center;">
 
 {% assign tmptags = site.tags | sort %}
 {% for tag in tmptags %}
@@ -80,11 +69,11 @@ Nem biztos, hogy teljesen jó ötlet ez a <a href="tags">#hashtag</a>-elés, de 
 
 </div>
 
-És akkor itt jön az igazi tartalomjegyzék. Úgy döntöttem végül, hogy a legfrissebbek lesznek a tetején, így kell tehát olvasni visszafele:
+És akkor itt jön az igazi tartalomjegyzék. 
 
-<p></p>
-
-<div class="tableofcontents">
+Úgy döntöttem végül, hogy a legfrissebbek lesznek a tetején, így kell tehát olvasni visszafele:
+	
+<div class="tableofcontents" style="margin-bottom: 20px;">
 
 {% assign tmpcategories = site.categories %}
 {% for category in tmpcategories reversed %}

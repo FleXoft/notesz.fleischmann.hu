@@ -1,0 +1,26 @@
+<!-- ########## -->
+<!-- # HEADER # -->
+<!-- ########## -->
+<div id="hamburger" onclick="toggleHeader()">☰</div>
+
+<header id="main-header">
+    <div class="header-container">
+        <nav>
+            <ul>
+                <li>{% if page.url == '/' %}<b>notesz.</b><a class="menu" href="https://fleischmann.hu/" title="fleischmann.hu" style="color: red;">fleischmann.hu</a>{% else %}<a class="menu" href="/" title="<h> Home" style="color: red;">{{ site.title }}</a>{% endif %}</li>
+                <li><a href="#">tartalom</a></li>
+                <li><a href="help">help!</a></li>
+            </ul>
+        </nav>
+        <div style="width: 100%; margin-left: 30px;"><hr color="red" style="height: 1px; border: 0px;"></div>
+        <nav>
+            <ul>
+                <li title="<d> debug" style="color: red;" id="debug-toggle">d</li>
+                <li title="<s> size" style="color: blue;" id="size-toggle">s</li>
+                <li title="<f> font" style="color: green;" id="font-toggle">f</li>
+                <li title="<j> justification" style="color: orange;" id="justy-toggle">j</li>
+                <li title="<n> night mode" style="color: black;" id="theme-toggle">☽</li>
+            </ul>
+        </nav>
+    </div>
+</header>

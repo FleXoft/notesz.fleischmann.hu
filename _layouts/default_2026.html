@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<!-- 
+#
+#      __    __              ______     _           __                                  __         
+#     / /_  / /___  ____ _  / __/ /__  (_)_________/ /_  ____ ___  ____ _____  ____    / /_  __  __
+#    / __ \/ / __ \/ __ `/ / /_/ / _ \/ / ___/ ___/ __ \/ __ `__ \/ __ `/ __ \/ __ \  / __ \/ / / /
+#   / /_/ / / /_/ / /_/ / / __/ /  __/ (__  ) /__/ / / / / / / / / /_/ / / / / / / / / / / / /_/ / 
+#  /_.___/_/\____/\__, (_)_/ /_/\___/_/____/\___/_/ /_/_/ /_/ /_/\__,_/_/ /_/_/ /_(_)_/ /_/\__,_/  
+#                /____/                                                                            
+# -----------------------------------------------------------------------------------------------------------
+#
+#
+# Jekyll based web page POC 2026 on GitHub
+# 
+# 
+# ToDo:
+#
+#
+# Rls:      2022.06.01. v1.0
+#
+#
+# preRls:   2022.05.24.
+#
+#   Nem szerték már többet módosítani (default.html, post.html) rajta
+#
+#
+# betaRls:  2022.05.01.
+#
+#   Ötlet és Github projekt, fájlok létrehozása.
+#
+#
+-->
+
+<html lang="hu-HU">
+<head>
+
+  <meta charset="utf-8" />
+  <meta name="xviewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="keywords" content="Fleischmann György, fleischmann, flex, gyurci, flexoft, mohács, budapest, magyarország, hungary, photography, digital, photo, black and white, landscape, people, blog, light, photo blog, photolog, photoblog, linux, sinclair, zx spectrum, psion, timex, perl, lcd, minolta, 9000, d7d, tsm, tivoli, ibm, tsm, tivoli storage manager, spectrum protect, gpfs, spectrum scale, osx, apple, ble" />
+
+  <meta name="owner"  content="FLEISCHMANN György" />
+  <meta name="author" content="FLEISCHMANN György" />
+
+  <meta name="description" content="A personal page for Fleischmann György."/>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link href="https://notesz.fleischmann.hu/opensearch.xml" rel="search" title="notesz.fleischmann.hu" type="application/opensearchdescription+xml" />
+  
+  <link href="feed.xml" type="application/rss+xml" rel="alternate" title="Latest 10 blog posts (atom)" />
+  
+  <!-- iOS Safari background color -->
+  <meta name="theme-color" content="#000000">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FBQRM85TS8"></script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+  
+   gtag('config', 'G-FBQRM85TS8');
+  </script>
+  
+  <link rel="stylesheet" type="text/css" href="css/default_2026.css">
+  <link rel="stylesheet" type="text/css" href="css/syntax.css" />
+  
+</head>
+
+<body class="">
+
+<!--
+<a href="https://fleischmann.hu/" title="fleischmann.hu"><center class="rightfloatingbox" style="padding: 5px; font-size: 60%; "><font color="#008f3f">F</font><br>
+<font color="#0057a6">L</font><br>
+<font color="#77147e">E</font><br>
+<font color="#f5a301">I</font><br>
+<font color="#e50005">S</font><br>
+<font color="#a8361e">C</font><br>
+<font color="#82cfed">H</font><br>
+<font color="#0191b4">M</font><br>
+<font color="#dd5e01">A</font><br>
+<font color="#777"   >N</font><br>
+<font color="#FFF"   >N</font><br>
+</center></a>
+-->
+
+<!-- Header -->
+{% include header2026.html %}
+{{ page.afterHeader }}
+
+<!-- Debug button helper -->
+<script type="text/javascript">
+  
+  var s = document.styleSheets[0];
+
+  function changeStylesheetRule( selector, property, value ) {
+    selector = selector.toLowerCase();
+    property = property.toLowerCase();
+    value = value.toLowerCase();
+
+    for( var i = 0; i < s.cssRules.length; i++ ) {
+      var rule = s.cssRules[i];
+      if( rule.selectorText === selector ) {
+        rule.style[property] = value;
+        return;
+      }
+    }
+    
+    s.insertRule( selector + " { " + property + ": " + value + "; }", 0 );
+  }
+
+</script>
+
+<!-- Data preparation for JavaScript helper -->
+<script>
+    
+    // LEFT
+    {% if page.url == '/' %}
+    const left_href = "{{ site.posts.first.url }}";
+    {% else %}
+    const left_href = "{% if page.previous.url %}{{ page.previous.url }}{% else %}/{% endif %}";
+    {% endif %}
+    
+    // RIGHT
+    {% if page.url == '/' %}
+    const right_href = "{{ site.posts.last.url }}";
+    {% else %}
+    const right_href = "{% if page.next.url %}{{ page.next.url }}{% else %}/{% endif %}";
+    {% endif %}
+    
+    // 1
+    const first_href = "{{ site.posts.first.url }}";
+
+</script>
+
+<!-- ######## -->
+<!-- # MAIN # -->
+<!-- ######## -->
+{{ page.beforeMain }}
+<!-- Content -->
+<main>        
+{{ page.beforeContent }}
+<a name="topofthepage"></a>
+{{ content }}
+{{ page.afterContent }}
+</main>
+
+<!-- ################# -->
+<!-- # LIGHTBOX VIEW # -->
+<!-- ################# -->
+<div id="lightbox" class="lightbox">
+    <img id="lightbox-img" class="lightbox-content" src="">
+    <div class="ui-overlay">
+        <button class="close-btn" onclick="galleryControl.close()" title="Close">&times;</button>
+        <button class="nav-btn prev" onclick="galleryControl.prev()" title="Previous">&#10094;</button>
+        <button class="nav-btn next" onclick="galleryControl.next()" title="Next">&#10095;</button>
+        <button class="fit-toggle-btn" onclick="galleryControl.toggleFit()" title="Fit/Fill"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14,3V5H17.59L13.09,9.5L14.5,10.91L19,6.41V10H21V3H14Z" /></svg></button>
+        <div class="caption-bar" id="caption"></div>
+    </div>
+</div>
+
+<!-- ########## -->
+<!-- # FOOTER # -->
+<!-- ########## -->
+{{ page.beforeFooter }}
+{% include footer2026.html %}
+{{ page.afterFooter }}
+<a name="bottomofthepage"></a>
+
+</body>
+</html>
+
+<!-- ############ -->
+<!-- # jsSCRIPT # -->
+<!-- ############ -->
+<script type='text/javascript' src='js/js_2026.js'></script>

@@ -11,6 +11,16 @@ ul a {
 	font-weight: bold;
 }
 
+ul {
+	margin-bottom: 0px;
+}
+
+ol {
+	font-size: .8em;
+	margin-left: 1em;
+	line-height: 1.45;
+}
+
 h1 {
 	#background-color: black;
 	#color: white;
