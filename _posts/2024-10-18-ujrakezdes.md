@@ -3,7 +3,7 @@ layout:   post_v3
 title:    "Újrakezdés/elkezdés"
 author:   flex
 category: 2024
-tags:     [flex]
+tags:     [WWW, web, design, html, dizájn]
 comments: false
 
 menuRIGHTStyleOverride:           'background: rgba( 0, 0, 0, 0.85 );'

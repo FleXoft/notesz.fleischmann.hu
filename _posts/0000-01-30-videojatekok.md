@@ -3,7 +3,7 @@ layout:   post_2026
 title:    Videójátékok
 author:   flex
 category: About
-tags:     [about, számítástechnika, compúter, kompjúter, videójáték]
+tags:     [about, számítástechnika, compúter, kompjúter, videójáték, game]
 comments: false
 
 beforeMain: '<div class="image-container"><img width="100%" style=" margin-bottom: -25px; margin-top: 35px;" src="images/logo/Sinclair.logo.png"><div class="image-caption">Sinclair logo</div></div>'

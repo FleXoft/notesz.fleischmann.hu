@@ -3,7 +3,7 @@ layout:   post_v3
 title:    "Anna leállamvizsgázott, hej!"
 author:   flex
 category: 2024
-tags:     [flex]
+tags:     [flex, Anna]
 comments: false
 
 menuRIGHTStyleOverride:           'background: rgba( 0, 0, 0, 0.85 );'

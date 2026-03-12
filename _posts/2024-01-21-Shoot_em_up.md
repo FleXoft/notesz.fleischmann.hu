@@ -3,7 +3,7 @@ layout:   post_v3
 title:    "Shoot 'em up Shooter Games"
 author:   flex
 category: 2024
-tags:     [flex]
+tags:     [flex, game, videójáték]
 comments: false
 
 menuRIGHTStyleOverride:           'background: rgba( 0, 0, 0, 0.85 );'

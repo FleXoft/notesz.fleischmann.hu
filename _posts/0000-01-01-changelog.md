@@ -3,7 +3,7 @@ layout:   post_v2
 title:    "changelog"
 author:   flex
 category: About
-tags:     [flex]
+tags:     [flex, changelog]
 comments: false
 
 menuRIGHTStyleOverride: 'background: rgba( 0, 0, 0, 0.85 );'

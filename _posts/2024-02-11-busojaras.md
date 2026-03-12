@@ -3,7 +3,7 @@ layout:   post_v3
 title:    "mohácsi busójárás 2024"
 author:   flex
 category: 2024
-tags:     [flex]
+tags:     [Mohács, busójárás]
 comments: false
 
 menuRIGHTStyleOverride:           'background: rgba( 0, 0, 0, 0.85 );'

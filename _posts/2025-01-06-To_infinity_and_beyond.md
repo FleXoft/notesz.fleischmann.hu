@@ -3,7 +3,7 @@ layout:   post_v3
 title:    "To infinity and beyond!"
 author:   flex
 category: 2025
-tags:     [flex]
+tags:     [WWW, web, design, html, dizájn]
 comments: false
 
 menuRIGHTStyleOverride:           'background: rgba( 0, 0, 0, 0.85 );'

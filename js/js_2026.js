@@ -168,7 +168,7 @@
         
             switch (e.keyCode) {
                 case 37: // Balra nyíl -> Előző bejegyzés
-                     window.location.href = left_href;
+                    window.location.href = left_href;
                     break;
                 case 39: // Jobbra nyíl -> Következő (Home)
                     window.location.href = right_href;

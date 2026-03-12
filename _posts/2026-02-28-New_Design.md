@@ -3,7 +3,7 @@ layout:   post_2026
 title:    A király új ruhája
 author:   flex
 category: 2026
-tags:     [WWW, web, design]
+tags:     [WWW, web, design, html, dizájn]
 comments: false
 
 beforeMain: '<div class="image-container"><img width="100%" style="height: 400px; margin-bottom: -45px;" src="photos/graffiti/graffiti01.jpeg"><div class="image-caption">Budapest, XVIII. kerület</div></div>'

@@ -223,7 +223,7 @@
         main {
             flex: 1 0 auto; /* Ez engedi, hogy nőjön, de ne menjen össze */
             max-width: 950px;
-            width: min(950px, 100%);
+            width: min(950px, 94%);
             margin: 30px auto 0 auto;
             padding: 20px;
             padding-top: 0px;

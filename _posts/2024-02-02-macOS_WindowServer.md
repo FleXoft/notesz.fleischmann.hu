@@ -3,7 +3,7 @@ layout:   post_v3
 title:    "macOS Sonoma Saga és WindowServer"
 author:   flex
 category: 2024
-tags:     [flex]
+tags:     [Apple, macOS]
 comments: false
 
 menuRIGHTStyleOverride:           'background: rgba( 0, 0, 0, 0.85 );'
