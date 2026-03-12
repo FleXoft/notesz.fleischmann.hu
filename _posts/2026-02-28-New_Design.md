@@ -17,7 +17,7 @@ beforeMain: '<div class="image-container"><img width="100%" style="height: 400px
 
 Valami megmagyarázhahatatlan oknál fogva bevillant az a gondolat, hogy mi lennem, ha a mostanában oly népszerű valamelyik AI agent-et megkérném, hogy segítsen nekem kicsit a korábbi elképzeléseim szerint gatyába rázni ezt a régi weboldalt.
 
-Az egyszerűség kedvéért a Google segíédjét kértem fel a feladatra:
+Az egyszerűség kedvéért a Google segédjét kértem fel erre a feladatra:
 
 {% include figure.html 
    url="images/Gemini3.png" 

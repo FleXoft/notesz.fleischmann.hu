@@ -17,18 +17,27 @@ Hihetetlen szerencsésnek érzem magam, hogy egy ilyen gépen dolgozhatok.
 
 Az előző gép (Intel CPU-s) sem volt "szar", de az ehhez képest még egy  másik múltbéli világból érkezett.
 
+{% include figure.html 
+   url="images/Nintendo/Ryujinx.png" 
+   shadow="" radius="0px" width="40%" float="right"
+   caption='Ryujinx - Nintendo Switch Emulator (<a href="https://ryujinx.app/">link</a>)' align="right" 
+%}
+
 **PRO:**
 - sebesen teszi a dolgát, mindig
 - szép hangja van
 - mindent tud, amit el lehet várni tőle
 - minden korábbi alkalmazásom így vagy úgy, de megy. Nagyon kevés Intel-es dolog maradt meg. Az egyik ilyen fekete bárány a Sonos.app. Nem is értem, hogy az hogy maradhatott még mindig Intel-es. Az M1-es bejelentés 2020. november 10-én történt. **Hey Sonos!**
+- elképesztő, hogy fut és az is ahogyan fut rajta egy Nintendo Switch emulátor
 
 **KONTRA:**
 - vastag és nehéz néha
 - Apple MagSafe 3 teljesen felesleges
 - nincs Touch Bar, én néha szerettem
 - DRÁGA!
-- néha ez is beröcög space váltások között ☹️, ezt nem is értem???
+- néha ez is beröcög Spaces váltások között ☹️, ezt nem is értem??? Az elején szerintem nem csinálta. Lehet javítják majd.
+
+<br clear="both">
 
 {% include figure.html 
    url="images/Apple/Apple_MacBook_Pro_M4-nobg.png" 

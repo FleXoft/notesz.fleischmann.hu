@@ -44,6 +44,12 @@ beforeMain: '<div class="image-container"><img width="100%" style="height: 470px
 
 <br>
 
+{% include figure.html 
+   url="images/Kivalo_dolgozo.png" 
+   shadow="" radius="0px" width="200px" float="right"
+   caption='' align="right" 
+%}
+
 Ez az oldal szerintem nem neked van és ha nem vagy teljesen biztos abban, hogy tényleg ide akartál látogatni, akkor kérlek ezen a ponton zárd be ezt az ablakot! Köszönöm szépen!
 
 „Abban, hogy tudok írni, nagyjából biztos voltam. Lehet, hogy nagyképűen hangzik, de az ember ne álljon oda tizenegyest lőni, ha azon szorong, hogy nem képes futni, rúgni és célozni”[^1] Teljesen igaz, de ezt most itt egy kicsit felrúgjuk, mert betűk nélkül bár sokkal könnyebb lenne, de nem fog tudni működni ez a notesz.
