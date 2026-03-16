@@ -4,15 +4,16 @@
 {%- assign shadow = include.shadow | default: "false" -%}
 {%- assign radius = include.radius | default: "4px" -%}
 {%- assign zoom = include.zoom | default: "false" -%}
+{%- assign lightboxable = include.lightboxable | default: "false" -%}
 
 <figure style="
     float: {{ float }}; width: {{ width }}; 
     margin: {% if float == 'left' %}0.5em 1.5em 0em 0{% elsif float == 'right' %}0.5em 0 0em 1.5em{% else %}1.5em auto{% endif %};
     text-align: {{ align }}; ">
-  <div style="overflow: hidden; border-radius: {{ radius }}; {% if shadow == 'true' %}box-shadow: 0 4px 12px rgba(0,0,0,0.15);{% endif %}">
+  <div style="overflow: hidden; border-radius: {{ radius }}; {% if shadow == 'true' %}box-shadow: 0 4px 12px rgba(0,0,0,0.2);{% endif %}">
     <img src="{{ include.url | relative_url }}" 
          alt="{{ include.caption | strip_html }}" 
-         class="{% if zoom == 'true' %}jekyll-fig-zoom{% endif %}"
+         class="{% if zoom == 'true' %}jekyll-fig-zoom {% endif %}{% if lightboxable == 'true' %}lightboxable{% endif %}"
          style="width: 100%; height: auto; display: block; transition: transform .3s ease; border-radius: {{ radius }};">
   </div>
   

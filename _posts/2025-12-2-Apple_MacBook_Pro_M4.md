@@ -6,7 +6,7 @@ category: 2025
 tags:     [Apple, MacBook Pro]
 comments: false
 
-beforeMain: '<div class="image-container"><img width="100%" style="height:; margin-top: 35px; margin-bottom: -20px;" src="images/Apple/Apple_MacBook_Pro_M4-nobg.png"><div class="image-caption">Apple MacBook Pro 16&quot; M4</div></div>'
+beforeMain: '<div class="image-container"><img width="100%" style="height:; margin-top: 50px; margin-bottom: -20px;" src="images/Apple/Apple_MacBook_Pro_M4-nobg.png"><div class="image-caption">Apple MacBook Pro 16&quot; M4</div></div>'
 ---
 
 {% include hudate.html %}
@@ -37,11 +37,18 @@ Az előző gép (Intel CPU-s) sem volt "szar", de az ehhez képest még egy  má
 - DRÁGA!
 - néha ez is beröcög Spaces váltások között ☹️, ezt nem is értem??? Az elején szerintem nem csinálta. Lehet javítják majd.
 
-<br clear="both">
+UPD:
+    
+{% include figure.html 
+   url="images/20260313_VMware_Fusion_ARM.png" 
+   shadow="" radius="0px" width="100%" float=""
+   caption='VMware Fusion ARM, VPN-ezéshez, 2026.03.13.' align="right" 
+%}
+
+<span clear="both"></span>
 
 {% include figure.html 
    url="images/Apple/Apple_MacBook_Pro_M4-nobg.png" 
    shadow="" radius="0px" width="100%" float=""
    caption='Apple MacBook Pro 16&quot; M4' align="right" 
 %}
-
