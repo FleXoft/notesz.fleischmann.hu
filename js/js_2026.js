@@ -8,10 +8,10 @@ class Gallery {
         
         // Ablak átméretezés figyelése
         // Window resize esemény
-        window.addEventListener('resize', () => {
-            console.log("Resize esemény elkapva!"); // Debughoz
-            this.updateLayout();
-        });
+        // window.addEventListener('resize', () => {
+        //     console.log("Resize esemény elkapva!"); // Debughoz
+        //     this.updateLayout();
+        // });
     }
 
     init() {
@@ -94,11 +94,6 @@ const galleryControl = {
         img: document.getElementById('lightbox-img'),
         cap: document.getElementById('caption')
     },
-    
-    // EZT A RÉSZT ADD HOZZÁ:
-    toggleFit() {
-        this.dom.box.classList.toggle('fit-mode');
-    },
 
     open(list, idx) {
         this.currentList = list;
@@ -107,7 +102,7 @@ const galleryControl = {
         this.dom.box.style.display = 'flex';
         document.body.style.overflow = 'hidden';
         
-        // Nyilak elrejtése
+        // Nyilak elrejtése, ha csak 1 kép van
         const navButtons = this.dom.box.querySelectorAll('.nav-btn');
         if (this.currentList.length <= 1) {
             navButtons.forEach(btn => btn.style.display = 'none');
@@ -132,6 +127,7 @@ const galleryControl = {
 
     next() { this.currentIndex = (this.currentIndex + 1) % this.currentList.length; this.render(); },
     prev() { this.currentIndex = (this.currentIndex - 1 + this.currentList.length) % this.currentList.length; this.render(); },
+    toggleFit() { this.dom.box.classList.toggle('fit-mode'); },
     close() { this.dom.box.style.display = 'none'; this.dom.img.src = ''; document.body.style.overflow = 'auto'; }
 };
     
@@ -197,6 +193,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 galleryControl.close();
                 return;
             }
+            if (e.keyCode === 83) { // ESC gomb
+                galleryControl.toggleFit();
+                return;
+            }            
         }
     
         // 2. Ha NINCS nyitva a lightbox, akkor jöhetnek az oldal szintű parancsok
@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
             case 68: // 'd' -> Debug ON
                 debugToggler();
                 break;
-            case 83: // 's' -> Debug OFF
+            case 83: // 's' -> Size
                 mainSizeToggler();
                 break;
         }
