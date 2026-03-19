@@ -40,9 +40,7 @@ beforeMain: '<div class="image-container"><img width="100%" style="height: 470px
 
 <br>
 
-<center><strong>Kedves Elvtársnők, Elvtársak, Tisztelt Idelátogató!</strong></center>
-
-<br>
+<strong><u>Kedves Elvtársnők, Elvtársak, Tisztelt Idelátogató!</u></strong>
 
 {% include figure.html 
    url="images/Kivalo_dolgozo.png" 
@@ -55,6 +53,10 @@ Ez az oldal szerintem nem neked van és ha nem vagy teljesen biztos abban, hogy 
 „Abban, hogy tudok írni, nagyjából biztos voltam. Lehet, hogy nagyképűen hangzik, de az ember ne álljon oda tizenegyest lőni, ha azon szorong, hogy nem képes futni, rúgni és célozni”[^1] Teljesen igaz, de ezt most itt egy kicsit felrúgjuk, mert betűk nélkül bár sokkal könnyebb lenne, de nem fog tudni működni ez a notesz.
 
 [^1]: [A könyvemet Orbán Viktornak ajánlanám, hogy lássa azt is, ami nem a bankszámlája meg a Putyin segge](https://telex.hu/karakter/kultura/2025/12/16/pottyondy-edina-interju-kozossegi-iranyelvek-megsertese)
+
+"Érdekes időket élünk. Miközben állandóan ott kísért körülöttünk az apokalipszis eljövetele – mindjárt vége a világnak, már esik is szét atomjaira, már nincs is talaj a lábunk alatt –,a hétköznapok szintjén még mindig ugyanaz történik, mint mindig: ugyanúgy beülünk az autóba, ugyanúgy beugrunk a szupermarketbe vásárolni, ugyanúgy cserélgetjük a ruhatárunkat, és ugyanúgy választásokra készülünk, mintha mindaz, amit a zsigereinkben érzünk, csak délibáb volna. Még mindig nem jött el, még mindig nem jött el... talán mégsem jön el."[^2]
+
+[^2]: [Gyárfás Dorka: A lét határán](https://dorkagyrfs.substack.com/p/a-let-hataran)
 
 Nem biztos, hogy teljesen jó ötlet ez a <a href="tags">#hashtag</a>-elés még mindig, de egyelőre ez most még marad itt:
 
