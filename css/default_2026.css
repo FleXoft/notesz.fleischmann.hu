@@ -11,6 +11,7 @@
             --ideal-height: 200px;
             --round: 2px;
             
+            --box-shadow-color: rgba(0, 0, 0, 0.84); /* Sötét árnyék világos módhoz */
         }
 
         [data-theme="dark"] {
@@ -19,6 +20,10 @@
             --header-bg:   #33333399; 
             --footer-bg:   #000000;
             --footer-text: #cccccc;
+            
+            --box-shadow-color: rgba(0, 0, 0, 0.4); /* Finomabb, feketébb árnyék sötét módhoz */
+            /* VAGY egy világító jellegű árnyék sötét módhoz: */
+            --box-shadow-color: rgba(175, 175, 175, 0.3);
         }
 
         /* Courier (Monospace) */
@@ -326,14 +331,14 @@
             padding-left: 0px;
             margin-left: -6px;
             font-weight: bold;
-            text-shadow: 3px 3px 10px #2a2f35;
+            text-shadow: 3px 3px 10px var(--box-shadow-color);
             font-family: Arial, Helvetica, sans-serif !important;
         }
 
         .shadow {
-            -webkit-box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.84);
-            -moz-box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.84);
-            box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.84);
+            -webkit-box-shadow: 0px 4px 18px var(--box-shadow-color);
+            -moz-box-shadow: 0px 4px 18px var(--box-shadow-color);
+            box-shadow: 0px 4px 18px var(--box-shadow-color);
         }
 
         .image-container {

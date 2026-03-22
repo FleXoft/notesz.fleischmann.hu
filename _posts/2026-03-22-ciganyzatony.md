@@ -29,8 +29,8 @@ comments: false
 
 <script type="text/javascript">
 
-	function loadGPXFileIntoGoogleMap( map, filename, color, opacity ) {
-	$.ajax( { url: filename, dataType: "xml", success: function( data ) {
+    function loadGPXFileIntoGoogleMap( map, filename, color, opacity ) {
+	    $.ajax( { url: filename, dataType: "xml", success: function( data ) {
 		var parser = new GPXParser( data, map );	// 
 		parser.setTrackColour( color );     		// Set the track line colour
 		parser.setTrackWidth( 5 );          		// Set the track line width
