@@ -7,6 +7,8 @@ tags:     [Mohács, kirándulás]
 comments: false
 ---
 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
 {% include hudate.html %}
 
 {% include prev_next_mini.html %}
