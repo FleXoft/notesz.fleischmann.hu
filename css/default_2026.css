@@ -441,10 +441,10 @@
          
             transition: opacity 0.5s ease;   
             /* Animáció az átméretezéshez (Unite Gallery stílus) */
-            /* transition: flex-basis 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
-                        flex-grow 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-                        height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-                        opacity 0.5s ease; */
+            transition: flex-basis 1.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                        flex-grow 1.5s cubic-bezier(0.4, 0, 0.2, 1),
+                        height 1.5s cubic-bezier(0.4, 0, 0.2, 1),
+                        opacity 1s ease;
         }
         
         .gallery-item img {
