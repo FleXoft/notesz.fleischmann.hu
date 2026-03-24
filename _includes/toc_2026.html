@@ -1,0 +1,210 @@
+<button id="toc-toggle" title="Tartalomjegyzék">☰</button>
+
+<nav id="toc-container" class="hidden">
+  <h3>Tartalom</h3>
+  <ul id="toc-list"></ul>
+</nav>
+
+<style>
+/* --- TARTALOMJEGYZÉK GOMB (A kék kör) --- */
+#toc-toggle {
+  position: fixed;
+  left: 25px;
+  bottom: 25px;
+  z-index: 1001;
+  
+  /* Megjelenés */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+  
+  /* Ikon középre igazítása */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  
+  /* Animációk */
+  transition: all 0.3s ease;
+}
+
+#toc-toggle:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 123, 255, 0.5);
+}
+
+#toc-toggle:active {
+  transform: scale(0.9);
+}
+
+/* --- TARTALOMJEGYZÉK PANEL --- */
+#toc-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 280px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+  padding-top: 50px;  /* Itt állítsd be, mennyivel kezdődjön lejjebb a lista! */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  z-index: 1000;
+  overflow-y: auto;
+  
+  /* Betűtípus és szövegkezelés */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  hyphens: none;
+  
+  /* Animáció: alapból balra kint van */
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+  
+  /* Háttérkép beállítása kényszerített nyújtással */
+  background-image: url('images/toc_bg.png');
+  background-size: 100% 102%;    /* Ez feszíti rá a teljes képet a téglalapra, akár torzítva is */
+  background-position: top left; /* A bal felső sarokból indítja a kiterítést */
+  background-repeat: no-repeat;
+  
+  /* Halványítás, hogy a szöveg olvasható maradjon */
+  background-blend-mode: overlay;
+  background-color: rgba(255, 255, 255, 0.65); /* 85%-os fehér takarás */
+
+  /* Extra védelem a tartalomnak */
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+/* Amikor látható (nincs rajta a hidden osztály) */
+#toc-container:not(.hidden) {
+  transform: translateX(0);
+}
+
+/* Fejléc a panelen belül */
+#toc-container h3 {
+  color: #007bff;
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+/* --- LISTA STÍLUSOK --- */
+#toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block; /* Biztosítjuk, hogy ne hasábosítson */
+  width: 100%;    /* Kitölti a panel szélességét */
+}
+
+#toc-list li {
+  margin-bottom: 15px; /* Térköz a pontok között */
+  display: block;      /* Kényszerítjük az egymás alá kerülést */
+  width: 100%;
+}
+
+#toc-list a {
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.4;
+  display: block;      /* A link is töltse ki a szélességet */
+  
+  /* Szövegkezelés: ne törje szét a szavakat, de ne is lógjon ki */
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
+  hyphens: auto;       /* Ha kell, finoman elválasztja a szavakat */
+  
+  white-space: normal; /* Engedjük a több sort, de egymás alatt */
+}
+
+/* Behúzások korrigálása, hogy ne "oszloposodjon" */
+.toc-h1 { font-weight: bold; padding-left: 0; }
+.toc-h2 { padding-left: 15px; }
+.toc-h3 { padding-left: 30px; font-size: 0.9em; color: #555; }
+
+/* Finom görgetés az egész oldalra */
+html {
+  scroll-behavior: smooth;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById('toc-toggle');
+  const tocContainer = document.getElementById('toc-container');
+  const tocList = document.getElementById('toc-list');
+  
+  const mainSection = document.querySelector('main');
+  if (!mainSection) return;
+
+  tocList.innerHTML = '';
+
+  // --- TOP ELEM ---
+  const liTop = document.createElement('li');
+  liTop.className = 'toc-special';
+  const aTop = document.createElement('a');
+  aTop.textContent = '▲ TOP';
+  aTop.href = '#topofthepage';
+  // TÖRLÖTT: aTop.onclick (...) -> Így nyitva marad!
+  liTop.appendChild(aTop);
+  tocList.appendChild(liTop);
+
+  // --- FEJEZETEK ---
+  const headers = mainSection.querySelectorAll('h1, h2, h3:not(#toc-container h3)');
+  headers.forEach((header, index) => {
+    if (!header.id) {
+      header.id = `fejezet-${index}`;
+    }
+    const li = document.createElement('li');
+    li.className = `toc-${header.tagName.toLowerCase()}`;
+    const a = document.createElement('a');
+    a.textContent = header.textContent;
+    a.href = `#${header.id}`;
+    // TÖRLÖTT: a.onclick (...) -> Így nyitva marad!
+    li.appendChild(a);
+    tocList.appendChild(li);
+  });
+
+  // --- BOTTOM ELEM ---
+  const liBottom = document.createElement('li');
+  liBottom.className = 'toc-special';
+  const aBottom = document.createElement('a');
+  aBottom.textContent = '▼ BOTTOM';
+  aBottom.href = '#bottomofthepage';
+  liBottom.appendChild(aBottom);
+  tocList.appendChild(liBottom);
+
+  // --- VEZÉRLÉS ---
+
+  // Gombnyomásra nyit/zár
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    tocContainer.classList.toggle('hidden');
+  });
+
+  // CSAK AKKOR TŰNIK EL, HA MELLÉ KATTINTASZ
+  document.addEventListener('click', (e) => {
+    const isClickInside = tocContainer.contains(e.target);
+    const isClickOnButton = toggleBtn.contains(e.target);
+
+    if (!isClickInside && !isClickOnButton) {
+      tocContainer.classList.add('hidden');
+    }
+  });
+
+  // Megakadályozzuk, hogy a panelen belüli kattintás (üres részen) bezárja a menüt
+  tocContainer.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+});
+</script>
