@@ -388,6 +388,49 @@
             height: 100%;
             border: 0;
         }
+        
+        /* Terminál */
+        pre.terminal {
+        	#border: 2px solid black;
+        	font-size:   .9rem;
+        	background-color: #333;
+        	line-height: 1.25;
+        	-moz-border-radius: 3px;
+        	-webkit-border-radius: 3px;
+        	border-radius: 3px;
+        	color: #17cc00;
+        	-webkit-font-smoothing: subpixel-antialiased;
+        	font-smoothing: subpixel-antialiased;
+        	padding: 0.8em;
+        	font-family: "Courier New", Courier, monospace;
+        	margin-top:    0.5em;
+        	margin-bottom: 25px;
+        	
+        	white-space: pre-wrap !important; /* Megtartja a szóközöket, de tördeli a sort */
+        	word-break: break-all;           /* Ha túl hosszú egy szó (pl. URL), ott is eltöri */
+        	overflow-wrap: break-word;       /* Biztosítja, hogy ne lógjon ki a keretből */
+        }
+        
+        pre.terminal::selection {
+        	background: #00ff00;
+        	text-shadow: none;
+        	color: black;
+        }
+        
+        pre.terminal a, .post pre.terminal a:hover, .post pre.terminal a:visited {
+        	background-color: #333;
+        	color: #17cc00;
+        }
+        
+        pre.terminal strong {
+        	color: #00ff00;
+        }
+        
+        pre.terminal strong::selection {
+        	background: #00ff00;
+        	text-shadow: none;
+        	color: black;
+        }
                 
         /* A teljes lábjegyzet rész betűméretének csökkentése */
          .footnotes {
