@@ -143,12 +143,13 @@ const galleryControl = {
     animateAndChange(direction) {
         if (this.currentList.length <= 1) return;
     
-        // 1. Kép elrejtése (kicsúsztatás)
+        // 1. Kép elrejtése (kicsúsztatás indítása)
         const outClass = direction === 'next' ? 'swipe-out-left' : 'swipe-out-right';
         this.dom.img.classList.add(outClass);
     
+        // Megvárjuk a CSS transition végét (300ms)
         setTimeout(() => {
-            // Index léptetése
+            // Index léptetése a háttérben
             if (direction === 'next') {
                 this.currentIndex = (this.currentIndex + 1) % this.currentList.length;
             } else {
@@ -157,19 +158,25 @@ const galleryControl = {
     
             const nextImgData = this.currentList[this.currentIndex];
     
-            // 2. Létrehozunk egy láthatatlan "betöltő" képet a memóriában
+            // 2. ELŐTÖLTÉS: Létrehozunk egy láthatatlan segéd-objektumot
             const tempImg = new Image();
-            tempImg.src = nextImgData.dataset.full;
-    
-            // Csak akkor megyünk tovább, ha az ÚJ kép már betöltődött
+            
             tempImg.onload = () => {
-                this.render(); // Itt történik a tényleges src csere
+                // CSAK AKKOR frissítjük a látható képet, ha az új már biztosan lementve van a böngészőben
+                // Ezzel kerüljük el a régi kép bevillanását
+                this.render(); 
                 
-                // 3. Egy apró várakozás, hogy a böngésző frissítse a rajzot
+                // 3. Visszaúsztatás: Kicsit várunk, hogy a böngésző "felfogja" az új képet
                 requestAnimationFrame(() => {
-                    this.dom.img.classList.remove('swipe-out-left', 'swipe-out-right');
+                    requestAnimationFrame(() => {
+                        this.dom.img.classList.remove('swipe-out-left', 'swipe-out-right');
+                    });
                 });
             };
+    
+            // Itt indítjuk el a tényleges letöltést a háttérben
+            tempImg.src = nextImgData.dataset.full;
+            
         }, 300);
     },
 
