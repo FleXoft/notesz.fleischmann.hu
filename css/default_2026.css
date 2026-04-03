@@ -531,6 +531,24 @@
             width: 100vw;
             max-height: none;
         }
+        
+        /* A lightboxban lévő kép alapértelmezett animációja */
+        #lightbox-img, .modal-content { /* Cseréld ki arra az ID-ra/Class-ra, ami a nagy képeden van */
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Amikor a kép eltűnik (balra vagy jobbra) */
+        .swipe-out-left {
+            opacity: 0 !important;
+            transform: translateX(90%) !important; /* Kicsit balra csúszik és elhalványul */
+        }
+        
+        .swipe-out-right {
+            opacity: 0 !important;
+            transform: translateX(-90%) !important; /* Kicsit jobbra csúszik és elhalványul */
+        }
 
         /* Lebegő gombok a képen */
         .ui-overlay {

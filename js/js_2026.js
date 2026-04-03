@@ -123,10 +123,55 @@ const galleryControl = {
             this.dom.box.classList.remove('landscape-mode');
         }
         this.dom.box.scrollTop = 0;
+        
+        // --- ÚJ RÉSZ: Kattintás kezelése a képen ---
+        this.dom.img.onclick = (e) => {
+            // Megakadályozzuk, hogy a kattintás "továbbszálljon" a háttérre
+            e.stopPropagation(); 
+
+            if (this.currentList.length <= 1) {
+                // Ha csak egy kép van, zárja be a lightbox-ot
+                this.close();
+            } else {
+                // Ha több kép van, mehet a következőre (vagy amit szeretnél)
+                this.next();
+            }
+        };
     },
 
-    next() { this.currentIndex = (this.currentIndex + 1) % this.currentList.length; this.render(); },
-    prev() { this.currentIndex = (this.currentIndex - 1 + this.currentList.length) % this.currentList.length; this.render(); },
+    // --- ÚJ ANIMÁLT LAPOZÓ LOGIKA KEZDŐDIK ---
+    animateAndChange(direction) {
+        // Ne fusson le az animáció, ha csak 1 kép van a galériában
+        if (this.currentList.length <= 1) return;
+
+        // 1. Eltüntető animáció ráadása az aktuális képre
+        if (direction === 'next') {
+            this.dom.img.classList.add('swipe-out-left');
+        } else {
+            this.dom.img.classList.add('swipe-out-right');
+        }
+
+        // 2. Megvárjuk, amíg a kép kicsúszik (300ms a CSS-ben), utána cserélünk
+        setTimeout(() => {
+            // Index növelése vagy csökkentése
+            if (direction === 'next') {
+                this.currentIndex = (this.currentIndex + 1) % this.currentList.length;
+            } else {
+                this.currentIndex = (this.currentIndex - 1 + this.currentList.length) % this.currentList.length;
+            }
+            
+            // Kép forrásának frissítése
+            this.render();
+            
+            // 3. Eltüntető osztályok levétele, így az új kép "beúszik"
+            this.dom.img.classList.remove('swipe-out-left', 'swipe-out-right');
+        }, 300);
+    },
+
+    next() { this.animateAndChange('next'); },
+    prev() { this.animateAndChange('prev'); },
+    // --- ÚJ ANIMÁLT LAPOZÓ LOGIKA VÉGE ---
+
     toggleFit() { this.dom.box.classList.toggle('fit-mode'); },
     close() { this.dom.box.style.display = 'none'; this.dom.img.src = ''; document.body.style.overflow = 'auto'; }
 };
