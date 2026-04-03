@@ -141,30 +141,35 @@ const galleryControl = {
 
     // --- ÚJ ANIMÁLT LAPOZÓ LOGIKA KEZDŐDIK ---
     animateAndChange(direction) {
-        // Ne fusson le az animáció, ha csak 1 kép van a galériában
         if (this.currentList.length <= 1) return;
-
-        // 1. Eltüntető animáció ráadása az aktuális képre
-        if (direction === 'next') {
-            this.dom.img.classList.add('swipe-out-left');
-        } else {
-            this.dom.img.classList.add('swipe-out-right');
-        }
-
-        // 2. Megvárjuk, amíg a kép kicsúszik (300ms a CSS-ben), utána cserélünk
+    
+        // 1. Kép elrejtése (kicsúsztatás)
+        const outClass = direction === 'next' ? 'swipe-out-left' : 'swipe-out-right';
+        this.dom.img.classList.add(outClass);
+    
         setTimeout(() => {
-            // Index növelése vagy csökkentése
+            // Index léptetése
             if (direction === 'next') {
                 this.currentIndex = (this.currentIndex + 1) % this.currentList.length;
             } else {
                 this.currentIndex = (this.currentIndex - 1 + this.currentList.length) % this.currentList.length;
             }
-            
-            // Kép forrásának frissítése
-            this.render();
-            
-            // 3. Eltüntető osztályok levétele, így az új kép "beúszik"
-            this.dom.img.classList.remove('swipe-out-left', 'swipe-out-right');
+    
+            const nextImgData = this.currentList[this.currentIndex];
+    
+            // 2. Létrehozunk egy láthatatlan "betöltő" képet a memóriában
+            const tempImg = new Image();
+            tempImg.src = nextImgData.dataset.full;
+    
+            // Csak akkor megyünk tovább, ha az ÚJ kép már betöltődött
+            tempImg.onload = () => {
+                this.render(); // Itt történik a tényleges src csere
+                
+                // 3. Egy apró várakozás, hogy a böngésző frissítse a rajzot
+                requestAnimationFrame(() => {
+                    this.dom.img.classList.remove('swipe-out-left', 'swipe-out-right');
+                });
+            };
         }, 300);
     },
 
