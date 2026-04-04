@@ -467,7 +467,7 @@
         }
         
         .container { max-width: 1400px; margin: 0 auto; padding: 0px 0px; }
-        section { margin-bottom: 60px; }
+        section {  }
         
         /* --- JUSTIFIED GRID ANIMÁCIÓVAL --- */
         .justified-gallery {
