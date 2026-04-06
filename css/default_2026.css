@@ -77,6 +77,13 @@
         #main-header {
             font-family: Arial, sans-serif !important;
             font-size: 18px;
+            
+            /* Csak az opacity (átlátszóság) változzon, a mozgás ne */
+            transition: opacity 0.5s ease-in-out; 
+            position: fixed; 
+            top: 0;
+            width: 100%;
+            z-index: 1000;
         }
 
         .header-container {
@@ -91,18 +98,7 @@
         /* Amikor rejtve van */
         .header-hidden {
             opacity: 0;
-            /* A translateY sort töröltük, így nem mozdul el felfelé */
-            //pointer-events: none; 
-        }
-        
-        #main-header {
-            /* Csak az opacity (átlátszóság) változzon, a mozgás ne */
-            transition: opacity 0.5s ease-in-out; 
-            position: fixed; 
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            font-family: Arial, sans-serif !important;
+            pointer-events: none; 
         }
         
         /* Amikor a fejléc el van rejtve (pl. egy .hidden class-szal), 
@@ -111,7 +107,7 @@
             transform: translateY(0) !important;
             opacity: 1 !important;
             transition: transform 1.2s ease-out, opacity 1.2s ease-out !important;
-        } */ */
+        } */
         
         /* Amikor a hamburgerrel kényszerítjük a megjelenítést */
         #main-header.force-show {
@@ -486,8 +482,7 @@
             background-color: #e0e0e0;
             cursor: pointer;
             opacity: 0; /* JS-ig rejtve, hogy ne ugráljon */
-         
-            transition: opacity 0.5s ease;   
+            
             /* Animáció az átméretezéshez (Unite Gallery stílus) */
             transition: flex-basis 1.5s cubic-bezier(0.4, 0, 0.2, 1), 
                         flex-grow 1.5s cubic-bezier(0.4, 0, 0.2, 1),

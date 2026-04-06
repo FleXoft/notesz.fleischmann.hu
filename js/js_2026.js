@@ -11,7 +11,7 @@ class Gallery {
         // window.addEventListener('resize', () => {
         //     console.log("Resize esemény elkapva!"); // Debughoz
         //     this.updateLayout();
-        // });
+        // });        
     }
 
     init() {
@@ -104,9 +104,12 @@ const galleryControl = {
         
         // Nyilak elrejtése, ha csak 1 kép van
         const navButtons = this.dom.box.querySelectorAll('.nav-btn');
-        if (this.currentList.length <= 1) {
-            navButtons.forEach(btn => btn.style.display = 'none');
-        }
+        // if (this.currentList.length <= 1) {
+        //     navButtons.forEach(btn => btn.style.display = 'none');
+        // }
+        navButtons.forEach(btn =>
+            btn.style.display = list.length <= 1 ? 'none' : ''
+        );
     },
 
     render() {
@@ -232,59 +235,59 @@ document.addEventListener('DOMContentLoaded', () => {
         // 1. Ellenőrizzük, hogy a Lightbox (NIGHTbox) nyitva van-e
         const lightbox = document.getElementById('lightbox');
         const isLightboxVisible = lightbox && (lightbox.style.display === 'flex' || lightbox.classList.contains('active'));
-    
+        
         // Ha a Lightbox nyitva van, hagyjuk, hogy a galéria kezelje a gombokat, 
         // és ne navigáljon el az oldalról.
-        if (isLightboxVisible) {
-            if (e.keyCode === 37) { // Balra nyíl
+        if (isLightboxVisible) {        
+            if (e.key === 'ArrowLeft') { // Balra nyíl
                 galleryControl.prev();
                 e.preventDefault();
                 return;
             }
-            if (e.keyCode === 39) { // Jobbra nyíl
+            if (e.key === 'ArrowRight') { // Jobbra nyíl
                 galleryControl.next();
                 e.preventDefault();
                 return;
             }
-            if (e.keyCode === 27) { // ESC gomb
+            if (e.key === 'Escape') { // ESC gomb
                 galleryControl.close();
                 return;
             }
-            if (e.keyCode === 83) { // ESC gomb
+            if (e.key === 's') { // s gomb
                 galleryControl.toggleFit();
                 return;
             }            
         }
-    
+          
         // 2. Ha NINCS nyitva a lightbox, akkor jöhetnek az oldal szintű parancsok
         if (e.altKey) return; // Alt billentyű esetén ne fusson le
     
-        switch (e.keyCode) {
-            case 37: // Balra nyíl -> Előző bejegyzés
+        switch (e.key) {
+            case 'ArrowLeft': // Balra nyíl -> Előző bejegyzés
                 window.location.href = left_href;
                 break;
-            case 39: // Jobbra nyíl -> Következő (Home)
+            case 'ArrowRight': // Jobbra nyíl -> Következő (Home)
                 window.location.href = right_href;
                 break;
-            case 72: // 'h' -> Home
+            case 'h': // 'h' -> Home
                 window.location.href = "/";
                 break;
-            case 49: // '1' -> Demo
+            case '1': // '1' -> Demo
                 window.location.href = first_href;
                 break;
-            case 74: // 'j' -> justy
+            case 'j': // 'j' -> justy
                 justyToggler();
                 break;
-            case 70: // 'f' -> font
+            case 'f': // 'f' -> font
                 fontToggler();
                 break;
-            case 78: // 'n' -> night
+            case 'n': // 'n' -> night
                 themeToggler();
                 break;
-            case 68: // 'd' -> Debug ON
+            case 'd': // 'd' -> Debug ON
                 debugToggler();
                 break;
-            case 83: // 's' -> Size
+            case 's': // 's' -> Size
                 mainSizeToggler();
                 break;
         }
