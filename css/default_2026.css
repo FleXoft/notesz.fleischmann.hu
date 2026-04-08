@@ -293,7 +293,7 @@
           background-color: transparent;
           text-decoration: underline;
         }
-        
+                
         /* Csak akkor lesz sorkizárt, ha az osztály aktív */
         main.justify-text p, main.justify-text ul {
             text-align: justify;

@@ -9,6 +9,12 @@ comments: false
 
 Ezt összefoglalni talán viszonylag egyszerű lesz, mert nincs olyan sok podcast, amit hallgatok:
 
+{% include figure.html 
+   url="images/ascii-art/ascii-art-podcast_2.png" 
+   shadow="" radius="0px" width="100%" float=""
+   caption='' align="right" 
+%}
+
 <style> 
 	table { 
 		width: 100%;
