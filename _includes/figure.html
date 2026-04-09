@@ -8,7 +8,7 @@
 {%- assign class = include.class | default: "" -%}
 
 <figure style="float: {{ float }}; width: {{ width }}; 
-    margin: {% if float == 'left' %}0.5em 1.5em 0em 0{% elsif float == 'right' %}0.5em 0 0em 1.5em{% else %}1.5em auto{% endif %}; text-align: {{ align }};">
+    margin: {% if float == 'left' %}0.2em 1.5em 0em 0{% elsif float == 'right' %}0.2em 0 0em 1.5em{% else %}1.5em auto{% endif %}; text-align: {{ align }};">
   <div style="overflow: hidden; border-radius: {{ radius }}; {% if shadow == 'true' %}box-shadow: 0 4px 12px rgba(0,0,0,0.2);{% endif %}" class="{{ class }}">
     <img src="{{ include.url | relative_url }}" 
          alt="{{ include.caption | strip_html }}" 

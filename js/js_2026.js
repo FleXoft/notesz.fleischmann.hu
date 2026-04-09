@@ -261,6 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
           
         // 2. Ha NINCS nyitva a lightbox, akkor jöhetnek az oldal szintű parancsok
         if (e.altKey) return; // Alt billentyű esetén ne fusson le
+        if (e.metaKey) return; // Apple command billentyű esetén ne fusson le
     
         switch (e.key) {
             case 'ArrowLeft': // Balra nyíl -> Előző bejegyzés

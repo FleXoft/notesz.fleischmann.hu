@@ -12,6 +12,8 @@
             --round: 2px;
             
             --box-shadow-color: rgba(0, 0, 0, 0.84); /* Sötét árnyék világos módhoz */
+
+            --table-bg-color: lightgrey;
         }
 
         [data-theme="dark"] {
@@ -24,6 +26,7 @@
             --box-shadow-color: rgba(0, 0, 0, 0.4); /* Finomabb, feketébb árnyék sötét módhoz */
             /* VAGY egy világító jellegű árnyék sötét módhoz: */
             --box-shadow-color: rgba(175, 175, 175, 0.3);
+            --table-bg-color: grey;
         }
 
         /* Courier (Monospace) */
