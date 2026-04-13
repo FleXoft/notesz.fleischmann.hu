@@ -211,6 +211,7 @@
         /* Alapértelmezett (világos) kódblokk háttér */
         .highlighter-rouge .highlight, 
         .highlighter-rouge pre {
+            padding: 10px;
             background-color: #f6f8fa !important; /* Világosszürke */
             color: #24292e;
             transition: background-color 0.5s ease, color 0.5s ease;
