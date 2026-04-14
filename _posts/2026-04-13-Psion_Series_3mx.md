@@ -12,7 +12,7 @@ comments: false
 {% include prev_next_mini.html %}
 
 {% include figure.html 
-   url="images/Psion/psion_series_3mx-nobg.png" 
+   url="images/Psion/psion_series_3mx-nobg.png" lightboxable="true"
    shadow="" radius="0px" width="100%" float="" class=""
    caption='Már nem emlékszem pontosan mikor, hogyan vettem.<br>De talán a 3c-t vittem javítani a Psion Magyarországhoz valamiért és ott a mérnöktől vettem aki javította vagy javította volna a 3c-t.' align="Right" 
 %}
