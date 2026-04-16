@@ -37,6 +37,8 @@ Megjött a szuper USB-C RS-232 adapter:
 
 Az első kapcsolat nem jött össze, mert úgy tűnik, hogy csak adni tud az eszköz, de nem veszi a notebook a Psion által küldött adatokat. Így ez most kicsit parkolópályára kerül addig, amíg nem sikerül ennek a problémának utánajárni. (**2026.04.13.**)
 
+**UPD: 2026.04.15.**: a Discord-on történt egyeztetés után kiderült, hogy valami rosszul lett megcsinálva a nyákon és azt kérte a fejlesztő, hogy tegyem át a másik oldalra a DB9-es csatlakozót. Áttettem és a kommunikáció TX/RX meg is javult, de a Psion-nal még mindig nem megy rendesen. Ebből sztem egy tejesen másik gyártótól új átalakító vásárlása lesz...
+
 ## HW Összefoglaló
 
 <style>
