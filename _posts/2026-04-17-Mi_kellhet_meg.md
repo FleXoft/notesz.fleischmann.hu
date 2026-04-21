@@ -1,6 +1,6 @@
 ---
 layout:   post_2026
-title:    Mi kellhet még?
+title:    Mi kellhet még? {tárgyak}
 author:   flex
 category: 2026
 tags:     [flex, computer, Nintendo, Switch, retro]
@@ -16,7 +16,7 @@ comments: false
 {% include figure.html 
    url="images/Ryujinx/Ryujinx.png" lightboxable="true"
    shadow="" radius="0px" width="100%" float="" class=""
-   caption='<a href="https://ryujinx.app/">ryujinx.app</a>' align="Right" 
+   caption='<a href="https://ryujinx.app/">ryujinx.app</a>' align="right" 
 %}
 
 Akárhányszor elindítom arra gondolok, hogy ez is hihetetlen szoftver és nem értem, hogy egyáltalán hogyan tudott elkészülni. Persze nem 100%-os, de már régóta simán használható.
@@ -26,7 +26,7 @@ Akárhányszor elindítom arra gondolok, hogy ez is hihetetlen szoftver és nem 
 {% include figure.html 
    url="images/Microsoft/xbox_wireless_controller_1.png" lightboxable="true"
    shadow="" radius="0px" width="100%" float="" class=""
-   caption='Microsoft Xbox Wireless Controller' align="Right" 
+   caption='Microsoft Xbox Wireless Controller' align="right" 
 %}
 
 Leszámítva, hogy nincs arra semmi értelmes magyarázat, miért kellet a jobb oldali gombokat a többi gyártóval ellentétbe összekeerni. Ez is egy jó kis cucc.
