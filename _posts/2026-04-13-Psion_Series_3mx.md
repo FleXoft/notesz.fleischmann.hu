@@ -30,7 +30,7 @@ A mostani feladat a szuperszámítógép ([Apple MacBook Pro M4](Apple_MacBook_P
 Megjött a szuper USB-C RS-232 adapter:
    
 {% include figure.html 
-   url="images/Psion/UniversalSerialAdapter-top.jpeg" 
+   url="images/Psion/UniversalSerialAdapter-top.png" 
    shadow="" radius="0px" width="100%" float="" class=""
    caption='A kiválasztott eszköz egy: Universal Serial Adapter Rev 1 (Second version) (USB-C, UART, RS232) lett,<br>innen: <a href="https://www.imania.dk/product_info.php?currency=EUR&cPath=204&products_id=7224&language=en">imania.dk</a>' align="Right" 
 %} 

@@ -25,7 +25,7 @@ Akárhányszor elindítom arra gondolok, hogy ez is hihetetlen szoftver és nem 
 
 {% include figure.html 
    url="images/Microsoft/xbox_wireless_controller_1.png" lightboxable="true"
-   shadow="" radius="0px" width="100%" float="" class=""
+   shadow="" radius="0px" width="85%" float="" class=""
    caption='Microsoft Xbox Wireless Controller' align="right" 
 %}
 
@@ -35,7 +35,7 @@ Leszámítva, hogy nincs arra semmi értelmes magyarázat, miért kellet a jobb 
 
 {% include figure.html 
    url="images/Amazon/Amazon_Kindle_Voyage-nobg.png" 
-   shadow="" radius="0px" width="100%" float=""
+   shadow="" radius="0px" width="85%" float=""
    caption='Amazon Kindle Voyage' align="right" 
 %}
 
