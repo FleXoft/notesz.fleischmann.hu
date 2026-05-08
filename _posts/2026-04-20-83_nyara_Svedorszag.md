@@ -6,7 +6,7 @@ category: 2026
 tags:     [flex, visszaemlékezés, nosztalgia]
 comments: false
 
-beforeMain: '<div class="image-container"><img width="100%" style="height: 470px; margin-bottom: -45px;" src="photos/Travemunde-Trelleborg.png"><div class="image-caption">Travemünde - Trelleborg</div></div>'
+beforeMain: '<div class="image-container"><img class="shadow" width="100%" style="height: 470px; margin-bottom: -45px;" src="photos/Travemunde-Trelleborg.png"><div class="image-caption">Travemünde - Trelleborg</div></div>'
 ---
 
 {% include hudate.html %}

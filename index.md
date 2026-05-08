@@ -6,7 +6,7 @@ category: index
 tags:     [muzax, video]
 comments: false
 
-beforeMain: '<div class="image-container"><img width="100%" style="height: 470px; margin-bottom: -45px;" src="images/1563176849891-Vice-LICK-Photo-Bex-Wade-5.jpeg"><div class="image-caption">Source: <a href="https://www.vice.com/en/article/neapm7/lick-events-launch-opening-queer-women-club" target="_blank">"Inside the Queer Club with a Strict ‘No Men’ Policy"</a></div></div>'
+beforeMain: '<div class="image-container"><img class="shadow" width="100%" style="height: 470px; margin-bottom: -45px;" src="images/1563176849891-Vice-LICK-Photo-Bex-Wade-5.jpeg"><div class="image-caption">Source: <a href="https://www.vice.com/en/article/neapm7/lick-events-launch-opening-queer-women-club" target="_blank">"Inside the Queer Club with a Strict ‘No Men’ Policy"</a></div></div>'
 ---
 
 {% assign rawtags = "" %}
