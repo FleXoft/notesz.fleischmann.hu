@@ -342,6 +342,12 @@ const debugToggle = document.getElementById('debug-toggle');
 //         hamburger.style.display = 'block';
 //     }
 // }, 10000);
+// Időzítő az eltűnéshez (10 másodperc után lehalványít / elrejt)
+setTimeout(() => {
+    if (header) {
+        header.classList.add('header-hidden');
+    }
+}, 10000);
 
 // Visszahozás hamburgerrel
 // function toggleHeader() {
