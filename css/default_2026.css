@@ -473,7 +473,7 @@
         .justified-gallery {
             display: flex;
             flex-wrap: wrap;
-            gap: var(--gap);
+            gap: var(--gallery-gap, var(--gap));
             transition: all .5s ease;
         }
 
@@ -500,6 +500,31 @@
             display: block;
             border-radius: var(--round);
             transition: transform 1.5s ease;
+        }
+
+        /* A kapcsoló aktív állapotában a teljes kép látható, vágás nélkül. */
+        .justified-gallery[data-fixed-height="true"] .gallery-item img {
+            object-fit: contain;
+        }
+
+        .justified-gallery[data-fixed-height="true"] .gallery-item {
+            background-color: transparent;
+        }
+
+        .justified-gallery[data-fixed-height="true"].gallery-rows-ready {
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+
+        .justified-gallery[data-fixed-height="true"].gallery-rows-ready .gallery-row {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: var(--gallery-gap, var(--gap));
+            width: 100%;
+        }
+
+        .justified-gallery[data-fixed-height="true"] .gallery-item:hover img {
+            transform: none;
         }
 
         .gallery-item:hover img { transform: scale(1.08); }

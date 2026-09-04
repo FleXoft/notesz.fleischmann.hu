@@ -4,7 +4,21 @@ class Gallery {
     constructor(el) {
         this.container = el;
         this.items = Array.from(el.querySelectorAll('.gallery-item'));
+        this.keepWholeImages = el.dataset.fixedHeight === 'true';
+
+        if (el.dataset.gap !== undefined && el.dataset.gap !== '') {
+            const requestedGap = Number(el.dataset.gap);
+            if (Number.isFinite(requestedGap) && requestedGap >= 0) {
+                el.style.setProperty('--gallery-gap', requestedGap + 'px');
+            }
+        }
+
         this.init();
+
+        if (this.keepWholeImages && 'ResizeObserver' in window) {
+            this.resizeObserver = new ResizeObserver(() => this.layoutWholeImages());
+            this.resizeObserver.observe(this.container);
+        }
         
         // Ablak átméretezés figyelése
         // Window resize esemény
@@ -24,7 +38,12 @@ class Gallery {
                 item.dataset.ratio = ratio;
                 item.style.flexBasis = (200 * ratio) + 'px';
                 item.style.flexGrow = ratio;
+                if (this.container.dataset.fixedHeight === 'true') {
+                    item.style.aspectRatio = ratio;
+                    item.style.height = 'auto';
+                }
                 item.style.opacity = "1";
+                this.layoutWholeImages();
             };
 
             if (img.complete) process(); else img.onload = process;
@@ -33,6 +52,119 @@ class Gallery {
                 const allImages = Array.from(this.container.querySelectorAll('img'));
                 galleryControl.open(allImages, index);
             };
+        });
+    }
+
+    layoutWholeImages() {
+        if (!this.keepWholeImages || this.items.some(item => !item.dataset.ratio)) return;
+
+        const width = this.container.clientWidth;
+        if (!width || width === this.lastLayoutWidth) return;
+        this.lastLayoutWidth = width;
+
+        const gap = parseFloat(getComputedStyle(this.container).gap) || 0;
+        const targetHeight = 200;
+        const itemCount = this.items.length;
+        const prefixRatios = [0];
+
+        this.items.forEach(item => {
+            prefixRatios.push(prefixRatios[prefixRatios.length - 1] + Number(item.dataset.ratio));
+        });
+
+        const firstRatio = Number(this.items[0].dataset.ratio);
+        const sameRatios = this.items.every(item =>
+            Math.abs(Number(item.dataset.ratio) - firstRatio) < 0.001
+        );
+        const rows = [];
+
+        if (sameRatios) {
+            // Egyforma képeknél minden teljes sor azonos elemszámú legyen.
+            // Az oszlopszám úgy készül, hogy az utolsó sor se nőjön túl nagyra.
+            const naturalColumnCount = Math.max(1, Math.round(
+                (width + gap) / (targetHeight * firstRatio + gap)
+            ));
+            const maxColumnCount = Math.min(itemCount, naturalColumnCount + 4);
+            let bestColumnCount = 1;
+            let bestCost = Infinity;
+
+            for (let columns = 1; columns <= maxColumnCount; columns++) {
+                const normalHeight = (width - gap * (columns - 1)) / (columns * firstRatio);
+                const remainder = itemCount % columns;
+                const lastCount = remainder || columns;
+                const lastHeight = (width - gap * (lastCount - 1)) / (lastCount * firstRatio);
+                const normalDeviation = Math.log(normalHeight / targetHeight);
+                const lastDeviation = Math.log(lastHeight / normalHeight);
+                const cost = normalDeviation * normalDeviation + lastDeviation * lastDeviation;
+
+                if (cost < bestCost) {
+                    bestCost = cost;
+                    bestColumnCount = columns;
+                }
+            }
+
+            for (let start = 0; start < itemCount; start += bestColumnCount) {
+                rows.push(this.items.slice(start, start + bestColumnCount));
+            }
+        } else {
+            const costs = new Array(itemCount + 1).fill(Infinity);
+            const previousBreak = new Array(itemCount + 1).fill(-1);
+            costs[0] = 0;
+
+            // Vegyes képarányoknál az egész album legjobb sortöréseit keressük.
+            for (let end = 1; end <= itemCount; end++) {
+                for (let start = 0; start < end; start++) {
+                    const count = end - start;
+                    const available = width - gap * (count - 1);
+                    if (available <= 0) continue;
+
+                    const ratioSum = prefixRatios[end] - prefixRatios[start];
+                    const height = available / ratioSum;
+                    const deviation = Math.log(height / targetHeight);
+                    const candidateCost = costs[start] + deviation * deviation;
+
+                    if (candidateCost < costs[end]) {
+                        costs[end] = candidateCost;
+                        previousBreak[end] = start;
+                    }
+                }
+            }
+
+            for (let end = itemCount; end > 0;) {
+                const start = previousBreak[end];
+                rows.unshift(this.items.slice(start, end));
+                end = start;
+            }
+        }
+
+        const signature = rows.map(rowItems => rowItems.length).join('-');
+        if (signature !== this.rowSignature) {
+            const fragment = document.createDocumentFragment();
+            rows.forEach(rowItems => {
+                const rowElement = document.createElement('div');
+                rowElement.className = 'gallery-row';
+                rowItems.forEach(item => rowElement.appendChild(item));
+                fragment.appendChild(rowElement);
+            });
+            this.container.replaceChildren(fragment);
+            this.container.classList.add('gallery-rows-ready');
+            this.rowSignature = signature;
+        }
+
+        rows.forEach(rowItems => {
+            const sum = rowItems.reduce((total, item) => total + Number(item.dataset.ratio), 0);
+            const available = width - gap * (rowItems.length - 1);
+            const height = available / sum;
+            let used = 0;
+
+            rowItems.forEach((item, index) => {
+                const itemWidth = index === rowItems.length - 1
+                    ? available - used
+                    : height * Number(item.dataset.ratio);
+                item.style.flex = `0 0 ${itemWidth}px`;
+                item.style.width = `${itemWidth}px`;
+                item.style.height = `${height}px`;
+                used += itemWidth;
+            });
         });
     }
         
@@ -119,7 +251,8 @@ const galleryControl = {
         this.dom.cap.innerHTML = currentImg.dataset.cap || currentImg.alt || "";
 
         // Arány lekérése a szülőtől az üzemmódhoz
-        const ratio = parseFloat(currentImg.parentElement.dataset.ratio);
+        const ratio = parseFloat(currentImg.closest('.gallery-item')?.dataset.ratio) ||
+            (currentImg.naturalWidth / currentImg.naturalHeight);
         if (ratio > 1.1) {
             this.dom.box.classList.add('landscape-mode');
         } else {
