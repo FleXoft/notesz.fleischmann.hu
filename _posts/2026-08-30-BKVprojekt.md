@@ -11,11 +11,11 @@ comments: false
 
 {% include prev_next_mini.html %}
 
-Ez egy jó kis fotós projekt volt 2009-ben egy iPhone 3G-vel.
+Ez egy jó kis fotós projekt volt 2009-ből, egy Apple iPhone 3G-vel. Eredetileg itt osztottam meg: [flickr](https://www.flickr.com/photos/fleischmann/), de most feltettem az utókornak a [Facebook](https://www.facebook.com/media/set/?set=a.10239135308295658)-ra, meg még ide is.
 
 Az iPhone 2008. augusztus 22-én jelent meg hivatalosan Magyarországon és Árpi karácsonyra akarta (???) valamelyik partnerünknek adni, de végül amellett döntött, hogy Marcellnek és nekem is ad egyet-egyet.
 
-Ezekkel akko csak egyetlen gond volt, hogy mi Pannon előfizetők voltunk akkor a cégnél és így kellett még hozzá szerezni egy Turbo X-Sim kártya adaptert. Ide mentünk: VIII. kerület, Karácsony Sándor utca 7-11. Semmi nincs már az akkori épületből, pedig egy művészfilmet biztosan megért volna az egész tranzakció!
+Ezekkel akkor csak egyetlen gond volt, hogy a T forgalmazta, mi pedig Pannon előfizetők voltunk akkor a cégnél és így kellett hozzá még szerezni egy Turbo X-Sim kártya adaptert. Ide mentünk érte: VIII. kerület, Karácsony Sándor utca 7-11. Semmi nincs már az akkori épületből, pedig egy művészfilmet biztosan megért volna azaz egész tranzakció!
 
 Imádtam a progit, amivel a képek készültek és sajnálom, hogy nem lett továbbfejlesztve a következő iOS verziókra!
 
