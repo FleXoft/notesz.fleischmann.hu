@@ -438,6 +438,7 @@
             padding-top: 3px;
             font-size: 0.85em;
             position: relative; /* Ez kell az álelem pozicionálásához */
+            clear: both; 
         }
         
         /* Ez hozza létre a 40%-os vonalat */

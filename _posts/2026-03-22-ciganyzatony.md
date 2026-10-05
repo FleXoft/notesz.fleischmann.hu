@@ -13,7 +13,7 @@ comments: false
 
 {% include prev_next_mini.html %}
 
-"A Duna közelsége különleges természeti kincseket rejt, amelyek közül az egyik legizgalmasabb a Cigány-zátony. Ez a homokos zátony igazi rejtett gyöngyszem, amely ideális helyszínt kínál a természet szerelmeseinek és a nyugodt kikapcsolódásra vágyóknak." [^1]
+"A Duna közelsége különleges természeti kincseket rejt, amelyek közül az egyik legizgalmasabb a Cigány-zátony. Ez a homokos zátony igazi rejtett gyöngyszem, amely ideális helyszínt kínál a természet szerelmeseinek és a nyugodt kikapcsolódásra vágyóknak."[^1]
 
 <div id="map-wrap" class="shadow" style="margin-bottom: 15px; margin-top: 15px;">
 	<div id="map" style="width:auto; height:850px;"></div>

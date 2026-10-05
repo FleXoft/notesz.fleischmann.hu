@@ -6,7 +6,7 @@ category: 2026
 tags:     [életbölcsesség, nárcisztika, flex]
 comments: false
 
-beforeMain: '<div class="image-container" style="position: relative;"><img class="shadow" width="100%" style="height: 600px;" src="photos/202605/HipstamaticPhoto-799406631.322188.jpeg"><div style="position: absolute; bottom: 10px; right: 10;" class="image-caption"><a href="https://www.nhm.at/en">Természettudományi Múzeum</a>; Bécs, 2026.05.</div></div>'
+beforeMain: '<div class="image-container" style="position: relative;"><img class="shadow" width="100%" style="height: 600px;" src="photos/202605/HipstamaticPhoto-799406631.322188.jpeg"><div style="position: absolute; bottom: 10px; right: 10px;" class="image-caption"><a href="https://www.nhm.at/en">Természettudományi Múzeum</a>; Bécs, 2026.05.</div></div>'
 ---
 
 {% include hudate.html %}

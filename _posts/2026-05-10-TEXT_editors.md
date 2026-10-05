@@ -6,7 +6,7 @@ category: 2026
 tags:     [macOS, texteditor, text]
 comments: false
 
-beforeMain: '<div class="image-container" style="position: relative;"><img class="shadow" width="100%" style="height: 300px;" src="images/202605/Screenshot 2026-05-08 at 14.12.44.png"><div style="position: absolute; bottom: 10px; right: 10;" class="image-caption"><a href="https://zed.dev/">Zed v1.1.5</a>; Mohács, 2026.05.</div></div>'
+beforeMain: '<div class="image-container" style="position: relative;"><img class="shadow" width="100%" style="height: 300px;" src="images/202605/Screenshot 2026-05-08 at 14.12.44.png"><div style="position: absolute; bottom: 10px; right: 10px;" class="image-caption"><a href="https://zed.dev/">Zed v1.1.5</a>; Mohács, 2026.05.</div></div>'
 ---
 
 {% include hudate.html %}

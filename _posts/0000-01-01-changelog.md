@@ -29,6 +29,10 @@ disableContentTitle: ''
 
 <table>
 	<tr>
+		<td valign="top" style="font-weight: bold;">2026.09.18.&nbsp;</td>
+		<td style="text-align: justify;">- pályára állítás</td>
+	</tr>
+	<tr>
 		<td valign="top" style="font-weight: bold;">2026.09.03.&nbsp;</td>
 		<td style="text-align: justify;">- rendbe tetettem a Codex-el a justified-gallery-t<br>
 		- elkezdtem végigvezetni az új template-t</td>

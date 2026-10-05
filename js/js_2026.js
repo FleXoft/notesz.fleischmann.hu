@@ -537,7 +537,7 @@ function themeToggler() {
     const newTheme = isDark ? 'light' : 'dark';
     
     document.documentElement.setAttribute('data-theme', newTheme);
-    document.body.classList.toggle('night-mode');
+    document.body.classList.toggle('night-mode', newTheme === 'dark');
 
     // Állapot mentése
     localStorage.setItem('selectedTheme', newTheme);
@@ -637,24 +637,42 @@ window.addEventListener('mousemove', function(e) {
     }
 });
 
-// 1. Night Mode visszaállítása
+// Oldalankénti induló beállítások: front matter > mentett választás > alapérték.
+// A felülbírálást nem mentjük el; a menügombok továbbra is a szokásos módon működnek.
+let pageDisplay = {};
+try {
+    const settings = JSON.parse(document.body.dataset.displaySettings || 'null');
+    if (settings && typeof settings === 'object' && !Array.isArray(settings)) {
+        pageDisplay = settings;
+    }
+} catch (error) {
+    console.warn('Érvénytelen display beállítás:', error);
+}
+
 const savedTheme = localStorage.getItem('selectedTheme');
-if (savedTheme === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    document.body.classList.add('night-mode');
-}
+const initialTheme = ['light', 'dark'].includes(pageDisplay.theme)
+    ? pageDisplay.theme
+    : savedTheme === 'dark' ? 'dark' : 'light';
+document.documentElement.setAttribute('data-theme', initialTheme);
+document.body.classList.toggle('night-mode', initialTheme === 'dark');
 
-// 2. Sorkizárás visszaállítása
-const savedJusty = localStorage.getItem('isJustified');
-if (savedJusty === 'true') {
-    const mainContent = document.querySelector('main');
-    if (mainContent) mainContent.classList.add('justify-text');
-}
+const mainContent = document.querySelector('main');
+const initialJustify = typeof pageDisplay.justify === 'boolean'
+    ? pageDisplay.justify
+    : localStorage.getItem('isJustified') === 'true';
+if (mainContent) mainContent.classList.toggle('justify-text', initialJustify);
 
-// Betöltéskor ellenőrizzük, volt-e korábban elmentve választás
-const savedFont = localStorage.getItem('selectedFontIndex');
-if (savedFont !== null) {
-    document.body.classList.remove(fonts[0]);
-    currentFontIndex = parseInt(savedFont);
-    document.body.classList.add(fonts[currentFontIndex]);
+const fontNames = ['courier', 'arial', 'times'];
+const pageFontIndex = fontNames.indexOf(pageDisplay.font);
+const savedFontIndex = Number(localStorage.getItem('selectedFontIndex'));
+currentFontIndex = pageFontIndex >= 0 ? pageFontIndex
+    : Number.isInteger(savedFontIndex) && savedFontIndex >= 0 && savedFontIndex < fonts.length
+        ? savedFontIndex : 0;
+document.body.classList.remove(...fonts);
+document.body.classList.add(fonts[currentFontIndex]);
+
+if (mainContent && typeof pageDisplay.wide === 'boolean') {
+    mainContent.style.maxWidth = pageDisplay.wide ? '100%' : '';
+    mainContent.style.width = pageDisplay.wide ? '95%' : '';
 }
+if (pageDisplay.debug === true && !debugSwitch) debugToggler();
