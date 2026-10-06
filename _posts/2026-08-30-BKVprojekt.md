@@ -15,7 +15,13 @@ Ez egy jó kis fotós projekt volt 2009-ből, egy Apple iPhone 3G-vel. Eredetile
 
 Az iPhone 2008. augusztus 22-én jelent meg hivatalosan Magyarországon és Árpi karácsonyra akarta (???) valamelyik partnerünknek adni, de végül amellett döntött, hogy Marcellnek és nekem is ad egyet-egyet.
 
-Ezekkel akkor csak egyetlen gond volt, hogy a T forgalmazta, mi pedig Pannon előfizetők voltunk akkor a cégnél és így kellett hozzá még szerezni egy Turbo X-Sim kártya adaptert. Ide mentünk érte: VIII. kerület, Karácsony Sándor utca 7-11. Semmi nincs már az akkori épületből, pedig egy művészfilmet biztosan megért volna azaz egész tranzakció!
+{% include figure.html 
+   url="photos/universal-sim_nobg.png" 
+   shadow="" class="" radius="0px" width="20%" float="right"
+   caption='universal-sim.com' align="right" 
+%}
+
+Ezekkel akkor csak egyetlen gond volt, hogy a T forgalmazta, mi pedig Pannon előfizetők voltunk akkor a cégnél és így kellett hozzá még szerezni egy Turbo X-Sim/universal-sim kártya adaptert. Ide mentünk érte: VIII. kerület, Karácsony Sándor utca 7-11. Semmi nincs már az akkori épületből, pedig egy művészfilmet biztosan megért volna azaz egész tranzakció!
 
 Imádtam a progit, amivel a képek készültek és sajnálom, hogy nem lett továbbfejlesztve a következő iOS verziókra!
 
