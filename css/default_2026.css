@@ -23,12 +23,11 @@
             --footer-bg:   #1a1a1a;
             --footer-text: #cccccc;
             
-            
-            --box-shadow-color: rgba(0, 0, 0, 0.4); /* Finomabb, feketébb árnyék sötét módhoz */
+            --xbox-shadow-color: rgba(0, 0, 0, 0.4); /* Finomabb, feketébb árnyék sötét módhoz */
             /* VAGY egy világító jellegű árnyék sötét módhoz: */
-            --box-shadow-color: rgba(0, 0, 0, 0.4); /* Finomabb, feketébb árnyék sötét módhoz */
+            --xbox-shadow-color: rgba(0, 0, 0, 0.4); /* Finomabb, feketébb árnyék sötét módhoz */
             /* VAGY egy világító jellegű árnyék sötét módhoz: */
-            --box-shadow-color: rgba(175, 175, 175, 0.3);
+            --box-shadow-color: rgba(200, 200, 200, 0.8);
             --table-bg-color: grey;
         }
 
@@ -339,9 +338,9 @@
         }
 
         .shadow {
-            -webkit-box-shadow: 0px 4px 18px var(--box-shadow-color);
-            -moz-box-shadow: 0px 4px 18px var(--box-shadow-color);
-            box-shadow: 0px 4px 18px var(--box-shadow-color);
+            -webkit-box-shadow: 0px 4px 12px var(--box-shadow-color);
+            -moz-box-shadow: 0px 4px 12px var(--box-shadow-color);
+            box-shadow: 0px 4px 12px var(--box-shadow-color);
         }
 
         .image-container {
