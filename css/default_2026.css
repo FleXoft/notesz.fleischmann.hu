@@ -20,9 +20,12 @@
             --bg-color:    #1a1a1a;
             --text-color:  #f1f1f1;
             --header-bg:   #33333399; 
-            --footer-bg:   #000000;
+            --footer-bg:   #1a1a1a;
             --footer-text: #cccccc;
             
+            
+            --box-shadow-color: rgba(0, 0, 0, 0.4); /* Finomabb, feketébb árnyék sötét módhoz */
+            /* VAGY egy világító jellegű árnyék sötét módhoz: */
             --box-shadow-color: rgba(0, 0, 0, 0.4); /* Finomabb, feketébb árnyék sötét módhoz */
             /* VAGY egy világító jellegű árnyék sötét módhoz: */
             --box-shadow-color: rgba(175, 175, 175, 0.3);
