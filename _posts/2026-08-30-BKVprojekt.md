@@ -25,7 +25,7 @@ Ezekkel akkor csak egyetlen gond volt, hogy a T forgalmazta, mi pedig Pannon el�
 
 Imádtam a progit, amivel a képek készültek és sajnálom, hogy nem lett továbbfejlesztve a következő iOS verziókra!
 
-<div class="justified-gallery" data-fixed-height="true" data-gap="">
+<div class="justified-gallery" style="clear: both;" data-fixed-height="true" data-gap="">
     <div class="gallery-item"><img src="photos/BKVprojekt/3890214894_92d7ee30d1_o.jpeg" data-full="photos/BKVprojekt/3890214894_92d7ee30d1_o_ORIGINAL.jpeg" loading="lazy"></div>
     <div class="gallery-item"><img src="photos/BKVprojekt/3890220842_191373a55c_o.jpeg" data-full="photos/BKVprojekt/3890220842_191373a55c_o_ORIGINAL.jpeg" loading="lazy"></div>
     <div class="gallery-item"><img src="photos/BKVprojekt/3889432915_ec354b85b8_o.jpeg" data-full="photos/BKVprojekt/3889432915_ec354b85b8_o_ORIGINAL.jpeg" loading="lazy"></div>
